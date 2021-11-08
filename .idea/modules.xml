@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bill-splitter.iml" filepath="$PROJECT_DIR$/.idea/bill-splitter.iml" />
       <module fileurl="file://$PROJECT_DIR$/bill-splitter-backend/bill-splitter-backend.iml" filepath="$PROJECT_DIR$/bill-splitter-backend/bill-splitter-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bill-splitter-frontend/bill-splitter-frontend.iml" filepath="$PROJECT_DIR$/bill-splitter-frontend/bill-splitter-frontend.iml" />
     </modules>
   </component>
 </project>

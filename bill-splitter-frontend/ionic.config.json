@@ -1,0 +1,7 @@
+{
+  "name": "bill-splitter-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
