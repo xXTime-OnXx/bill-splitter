@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { Role } from '../../../domain/aggregate/user/role.enum';
 
 @Injectable()
 export class AuthService {
@@ -7,6 +8,7 @@ export class AuthService {
     userId: 1,
     username: 'john',
     password: 'changeme',
+    roles: [Role.USER],
   };
 
   constructor(private jwtService: JwtService) {}

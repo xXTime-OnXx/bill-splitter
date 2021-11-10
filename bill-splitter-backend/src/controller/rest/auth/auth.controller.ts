@@ -3,6 +3,8 @@ import { LocalAuthGuard } from '../../security/auth/guard/local-auth.guard';
 import { AuthService } from '../../security/auth/auth.service';
 import { JwtAuthGuard } from '../../security/auth/guard/jwt-auth.guard';
 import { ApiBasicAuth, ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { Roles } from '../../security/auth/decorator/roles.decorator';
+import { Role } from '../../../domain/aggregate/user/role.enum';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -18,6 +20,7 @@ export class AuthController {
 
   @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
+  @Roles(Role.USER)
   @Get('profile')
   getProfile(@Request() req): Promise<void> {
     return req.user;
