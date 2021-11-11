@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <div class="login-header ion-padding">
+    <ion-img
+      class="bill-icon"
+      src="assets/icon/bill-icon.png"></ion-img>
+    <h1 class="ion-text-center login-title">Bill Splitter</h1>
+  </div>
 
+  <div class="login-body ion-padding">
+    <ion-item class="ion-margin">
+      <ion-label position="fixed">
+        <ion-icon class="medium-size" name="person-outline"></ion-icon>
+      </ion-label>
+      <ion-input pattern="text" type="text" placeholder="Username" required></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-label position="fixed">
+        <ion-icon class="medium-size" name="lock-closed-outline"></ion-icon>
+      </ion-label>
+      <ion-input pattern="password" type="password" placeholder="Password" required></ion-input>
+    </ion-item>
+    <ion-button shape="round" class="login-button ion-margin" expand="block">Login</ion-button>
+  </div>
 </ion-content>
