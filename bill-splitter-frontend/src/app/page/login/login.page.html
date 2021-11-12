@@ -8,17 +8,23 @@
 
   <div class="login-body ion-padding">
     <ion-item class="ion-margin">
-      <ion-label position="fixed">
-        <ion-icon class="medium-size" name="person-outline"></ion-icon>
-      </ion-label>
-      <ion-input pattern="text" type="text" placeholder="Username" required></ion-input>
+      <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
+      <ion-input class="login-input" pattern="text" type="text" placeholder="Username" required></ion-input>
     </ion-item>
     <ion-item class="ion-margin">
-      <ion-label position="fixed">
-        <ion-icon class="medium-size" name="lock-closed-outline"></ion-icon>
-      </ion-label>
-      <ion-input pattern="password" type="password" placeholder="Password" required></ion-input>
+        <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input class="login-input" pattern="password" type="password" placeholder="Password" required></ion-input>
     </ion-item>
     <ion-button shape="round" class="login-button ion-margin" expand="block">Login</ion-button>
+    <div class="ion-text-center">
+      <a class="login-password-forgotten" routerLink="#">Forgot Password?</a>
+    </div>
+  </div>
+
+  <div class="login-footer ion-padding-bottom">
+    <p class="ion-text-center">
+      New User?
+      <a class="login-sign-up" routerLink="#">Sign Up</a>
+    </p>
   </div>
 </ion-content>
