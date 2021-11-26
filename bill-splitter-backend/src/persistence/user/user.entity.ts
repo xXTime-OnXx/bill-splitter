@@ -1,25 +1,25 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
-import {Role} from "../../domain/aggregate/user/role.enum";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Role } from '../../domain/aggregate/user/role.enum';
 
-@Entity("user")
+@Entity('user')
 export class UserEntity extends BaseEntity {
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column()
-    username: string;
+  @Column()
+  username: string;
 
-    @Column()
-    password: string;
+  @Column()
+  password: string;
 
-    @Column()
-    email: string;
+  @Column()
+  email: string;
 
-    @Column({
-        type: "enum",
-        enum: Role,
-        array: true,
-        default: [Role.USER]
-    })
-    roles: Role[]
+  @Column({
+    type: 'enum',
+    enum: Role,
+    array: true,
+    default: [Role.USER],
+  })
+  roles: Role[];
 }
