@@ -58,16 +58,16 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## TypeORM
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Generate Migration
+```bash
+npm run typeorm migration:generate -- -n <name>
+```
 
-## Stay in touch
+## Docker
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Postgres:
+```bash
+docker run --name bill-splitter -e POSTGRES_PASSWORD=bill-splitter -e POSTGRES_USER=bill-splitter -p 5432:5432 -d postgres:14 
+```

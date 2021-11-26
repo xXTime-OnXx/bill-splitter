@@ -1,0 +1,19 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": "5432",
+  "username": "bill-splitter",
+  "password": "bill-splitter",
+  "database": "bill-splitter",
+  "entities": [
+    "src/persistence/**/*.entity{.ts,.js}"
+  ],
+  "migrations": [
+    "src/persistence/migration/**/*{.ts,.js}"
+  ],
+  "cli": {
+    "migrationsDir": "src/persistence/migration"
+  },
+  "migrationsRun": "true",
+  "synchronize": "true"
+}
