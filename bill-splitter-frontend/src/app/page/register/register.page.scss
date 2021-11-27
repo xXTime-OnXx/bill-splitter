@@ -1,37 +1,42 @@
-.login-header {
+.register-header {
   padding-top: 50px;
 }
 
-.login-body {
+.register-body {
   margin: auto;
   padding-top: 40px;
   max-width: 600px;
 }
 
-.login-title {
+.register-title {
   font-family: Georgia, serif;
   font-size: 40px;
 }
 
-.login-input {
+.register-input {
   --padding-start: 0px;
 }
 
-.login-button {
+.register-button {
   margin-top:  30px;
   margin-left: 30px;
   margin-right: 30px;
   --background: #FFAF40;
 }
 
-.login-footer {
+.register-password-forgotten {
+  color: white;
+  text-decoration: none;
+}
+
+.register-footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
 }
 
-.login-link {
+.register-sign-up {
   text-decoration: none;
   color: #FFAF40;
 }

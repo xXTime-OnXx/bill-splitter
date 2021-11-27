@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="register-header ion-padding">
+    <ion-img
+      class="bill-icon"
+      src="assets/icon/bill-icon.png"></ion-img>
+    <h1 class="ion-text-center register-title">Bill Splitter</h1>
+  </div>
+
+  <div class="register-body ion-padding">
+    <ion-item class="ion-margin">
+      <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
+      <ion-input class="register-input" pattern="text" type="text" placeholder="Username" required></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-icon class="medium-size" slot="start" name="mail-outline"></ion-icon>
+      <ion-input class="register-input" pattern="email" type="email" placeholder="Email" required></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
+      <ion-input class="register-input" pattern="password" type="password" placeholder="Password" required></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin">
+      <ion-icon class="medium-size" slot="start" name="lock-open-outline"></ion-icon>
+      <ion-input class="register-input" pattern="password" type="password" placeholder="Repeat Password" required></ion-input>
+    </ion-item>
+    <ion-button shape="round" class="register-button ion-margin" expand="block">Register</ion-button>
+  </div>
+
+  <div class="register-footer ion-padding-bottom">
+    <p class="ion-text-center">
+      Already Registered?
+      <a class="register-sign-up" routerLink="/login">Sign In</a>
+    </p>
+  </div>
+</ion-content>
