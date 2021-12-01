@@ -12,4 +12,13 @@ export class UserRepositoryImpl extends UserRepository {
       },
     });
   }
+
+  async create(user: User): Promise<void> {
+    const userEntity = new UserEntity();
+    userEntity.username = user.username;
+    userEntity.password = user.password;
+    userEntity.email = user.email;
+    userEntity.roles = user.roles;
+    await userEntity.save();
+  }
 }

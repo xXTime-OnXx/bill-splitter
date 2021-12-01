@@ -11,16 +11,17 @@ export class UserManager {
   ) {}
 
   public async saveUser(user: User): Promise<void> {
-    const hashedPassword = await this.hashingService.hashPassword(
-      user.password,
-    );
+    user.password = await this.hashingService.hashPassword(user.password);
+    await this.userRepository.create(user);
   }
 
-  public async checkPassword(user: User): Promise<boolean> {
-    const hashedPassword = (await this.userRepository.find(user.username))
-      .password;
+  public async checkPassword(
+    username: string,
+    password: string,
+  ): Promise<boolean> {
+    const hashedPassword = (await this.userRepository.find(username)).password;
     return await this.hashingService.comparePasswordHash(
-      user.password,
+      password,
       hashedPassword,
     );
   }
