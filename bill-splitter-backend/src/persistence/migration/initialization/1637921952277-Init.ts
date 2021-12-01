@@ -1,6 +1,6 @@
-import {MigrationInterface, QueryRunner} from 'typeorm';
-import {UserEntity} from "../../user/user.entity";
-import {Role} from "../../../domain/aggregate/user/role.enum";
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { UserEntity } from '../../user/user.entity';
+import { Role } from '../../../domain/aggregate/user/role.enum';
 
 export class Init1637921952277 implements MigrationInterface {
   name = 'Init1637921952277';
@@ -9,10 +9,13 @@ export class Init1637921952277 implements MigrationInterface {
     const admin = new UserEntity();
     admin.username = 'admin';
     admin.email = 'admin@admin.com';
-    admin.password = '$2b$10$zP5r1ohKRf7holpv0NLlOeh7S.wHUw/AEs0TFYC6mBdIvu6mpWlu2';
+    admin.password =
+      '$2b$10$zP5r1ohKRf7holpv0NLlOeh7S.wHUw/AEs0TFYC6mBdIvu6mpWlu2';
     admin.roles = [Role.USER, Role.ADMIN];
     await admin.save();
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    return Promise.resolve();
+  }
 }
