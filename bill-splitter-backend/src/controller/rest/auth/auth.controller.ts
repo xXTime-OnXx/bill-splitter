@@ -12,9 +12,7 @@ import { JwtAuthGuard } from '../../security/auth/guard/jwt-auth.guard';
 import { ApiBasicAuth, ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { Role } from '../../../domain/aggregate/user/role.enum';
 import { UserManager } from '../../../domain/usecase/user/user.manager';
-import { User } from '../../../domain/aggregate/user/user.type';
 import { RegisterDto } from '../dto/register.dto';
-import { UserQuery } from '../../../domain/usecase/user/user.query';
 import { LoginDto } from '../dto/login.dto';
 import { RolesGuard } from '../../security/auth/guard/roles.guard';
 import { Roles } from '../../security/auth/decorator/roles.decorator';
@@ -25,14 +23,11 @@ export class AuthController {
   constructor(
     private authService: AuthService,
     private userManager: UserManager,
-    private userQuery: UserQuery,
   ) {}
 
   @Post('register')
   async register(@Body() registerDto: RegisterDto): Promise<any> {
-    await this.userManager.saveUser(
-      AuthController.mapRegisterDtoToUser(registerDto),
-    );
+    await this.userManager.saveUser(RegisterDto.toUser(registerDto));
   }
 
   @ApiBasicAuth()
@@ -44,21 +39,9 @@ export class AuthController {
 
   @ApiBearerAuth()
   @UseGuards(JwtAuthGuard, RolesGuard)
-  // TODO: RolesGuard is executed before JwtAuthGuard without request.user being set
   @Roles(Role.USER)
   @Get('profile')
   getProfile(@Request() req): Promise<void> {
-    console.log(req.user);
     return req.user;
-  }
-
-  private static mapRegisterDtoToUser(registerDto: RegisterDto): User {
-    return {
-      id: undefined,
-      username: registerDto.username,
-      password: registerDto.password,
-      email: registerDto.email,
-      roles: [Role.USER],
-    };
   }
 }

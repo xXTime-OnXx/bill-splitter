@@ -12,7 +12,7 @@ export class AuthService {
     private userQuery: UserQuery,
   ) {}
 
-  async validateUser(username: string, password: string): Promise<any> {
+  async validateUser(username: string, password: string): Promise<User> {
     if (await this.userManager.checkPassword(username, password)) {
       return await this.userQuery.find(username);
     }
