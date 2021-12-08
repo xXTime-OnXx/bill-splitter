@@ -7,27 +7,43 @@
   </div>
 
   <div class="login-body ion-padding">
-    <ion-item class="ion-margin">
-      <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
-      <ion-input class="login-input" pattern="text" type="text" placeholder="Username" required></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item class="ion-margin">
+        <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
+        <ion-input formControlName="username" class="login-input" type="text" placeholder="Username" required></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin">
         <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-input class="login-input" pattern="password" type="password" placeholder="Password" required></ion-input>
-    </ion-item>
-    <ion-button shape="round" class="login-button ion-margin" expand="block">Login</ion-button>
-    <div class="ion-text-center">
-      <p class="ion-text-center">
-        Forgot Password?
-        <a class="login-link" routerLink="#">Reset</a>
-      </p>
-    </div>
+        <ion-input formControlName="password" class="login-input" type="password" placeholder="Password" required></ion-input>
+      </ion-item>
+
+      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.username.errors?.required && !errorControl.password.errors?.required">
+        Username is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && !errorControl.username.errors?.required">
+        Password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && errorControl.username.errors?.required">
+        Username & Password are required.
+      </span>
+      <span class="error ion-padding" *ngIf="!isLoginSuccessful">
+        Username or Password is incorrect.
+      </span>
+
+      <ion-button type="submit" shape="round" class="login-button ion-margin" expand="block">Login</ion-button>
+      <div class="ion-text-center">
+        <p routerLink="#" class="ion-text-center">
+          Forgot Password?
+          <a class="login-link">Reset</a>
+        </p>
+      </div>
+    </form>
   </div>
 
   <div class="login-footer ion-padding-bottom">
-    <p class="ion-text-center">
+    <p routerLink="/register" class="ion-text-center">
       New User?
-      <a class="login-link" routerLink="/register">Sign Up</a>
+      <a class="login-link">Sign Up</a>
     </p>
   </div>
 </ion-content>
