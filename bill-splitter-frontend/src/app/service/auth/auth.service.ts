@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import {StorageService} from '../storage/storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private storage: StorageService,
   ) {
   }
 
@@ -22,8 +24,7 @@ export class AuthService {
         username,
         password
       }).toPromise();
-      // TODO: create Storage service
-      // this.storage.setItem(environment.bearerToken, response.access_token);
+      await this.storage.set(environment.bearerToken, response.access_token);
       return true;
     } catch (e) {
       console.error(e);
