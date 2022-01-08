@@ -7,23 +7,27 @@
   </div>
 
   <div class="register-body ion-padding">
-    <ion-item class="ion-margin">
-      <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
-      <ion-input class="register-input" pattern="text" type="text" placeholder="Username" required></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="medium-size" slot="start" name="mail-outline"></ion-icon>
-      <ion-input class="register-input" pattern="email" type="email" placeholder="Email" required></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-input class="register-input" pattern="password" type="password" placeholder="Password" required></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="medium-size" slot="start" name="lock-open-outline"></ion-icon>
-      <ion-input class="register-input" pattern="password" type="password" placeholder="Repeat Password" required></ion-input>
-    </ion-item>
-    <ion-button shape="round" class="register-button ion-margin" expand="block">Register</ion-button>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <ion-item class="ion-margin">
+        <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
+        <ion-input formControlName="username" class="register-input" type="text" placeholder="Username" required></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin">
+        <ion-icon class="medium-size" slot="start" name="mail-outline"></ion-icon>
+        <ion-input formControlName="email" class="register-input" type="email" placeholder="Email" required></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin">
+        <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-input formControlName="password" class="register-input" type="password" placeholder="Password"
+                   required></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin">
+        <ion-icon class="medium-size" slot="start" name="lock-open-outline"></ion-icon>
+        <ion-input formControlName="confirmPassword" class="register-input" type="password" placeholder="Repeat Password"
+                   required></ion-input>
+      </ion-item>
+      <ion-button shape="round" class="register-button ion-margin" expand="block">Register</ion-button>
+    </form>
   </div>
 
   <div class="register-footer ion-padding-bottom">
