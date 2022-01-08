@@ -4,9 +4,9 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "start": "ionic serve",
-    "frontend:dev": "ionic serve",
-    "build": "ionic build",
+    "start": "ng serve",
+    "frontend:dev": "ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
