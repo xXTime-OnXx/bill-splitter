@@ -40,7 +40,7 @@ export class AuthService {
       password
     };
     try {
-      await this.http.post(environment.host + 'auth/register', registerDto);
+      await this.http.post(environment.host + 'auth/register', registerDto).toPromise();
       return true;
     } catch (e) {
       console.error(e);
