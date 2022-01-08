@@ -6,14 +6,17 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+defaults:
+  run:
+    working-directory: bill-splitter-frontend
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          entrypoint: bill-splitter-frontend
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BILL_SPLITTER_ORIGINAL }}'
           channelId: live
