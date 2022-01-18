@@ -3,14 +3,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConnectionOptions } from 'typeorm';
 import { UserRepository } from '../domain/aggregate/user/user.repository';
 import { UserRepositoryImpl } from './user/user.repository-impl';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
-      useFactory: async () =>
+      useFactory: async (configService: ConfigService) =>
         ({
           type: 'postgres',
-          host: 'localhost',
+          host: configService.get('DATABASE_HOST'),
           port: 5432,
           username: 'bill-splitter',
           password: 'bill-splitter',
@@ -23,7 +24,7 @@ import { UserRepositoryImpl } from './user/user.repository-impl';
           migrationsRun: true,
           synchronize: true,
         } as ConnectionOptions),
-      inject: [],
+      inject: [ConfigService],
     }),
   ],
   providers: [
