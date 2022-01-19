@@ -24,3 +24,7 @@ services:
       - bill-splitter-database:/var/lib/postgresql/data
 volumes:
   bill-splitter-database:
+networks:
+  default:
+    external:
+      name: webproxy
