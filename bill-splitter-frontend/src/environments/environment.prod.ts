@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  // host: 'http://localhost:3000/api/',
+  host: 'http://142.132.183.62:3000/api/',
   bearerToken: 'bearer_token',
 };
