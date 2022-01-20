@@ -3,7 +3,9 @@
 </p>
 
 # Bill Splitter
+
 ## Description
+
 A project, useful for splitting the bill in a group of people.
 
 ## Installation
@@ -11,5 +13,13 @@ A project, useful for splitting the bill in a group of people.
 ## Running the app
 
 ## Test
+
+## Certbot
+
+Renew certificates
+
+```shell
+$ docker compose run --rm certbot renew
+```
 
 ## Support
