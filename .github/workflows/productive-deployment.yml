@@ -1,0 +1,32 @@
+name: Deploy to Frontend & Backend on merge
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: cd /root/git/bill-splitter && git pull && chmod u+x deployment.sh && sh ./deployment.sh
+
+  build_and_deploy_frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bill-splitter-frontend
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci && npm run build:prod
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          entrypoint: bill-splitter-frontend
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BILL_SPLITTER_ORIGINAL }}'
+          channelId: live
+          projectId: bill-splitter-original
