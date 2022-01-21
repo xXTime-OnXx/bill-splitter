@@ -42,10 +42,10 @@ export class RegisterPage implements OnInit {
 
   private buildForm(): void {
     this.registerForm = new FormGroup({
-      username: new FormControl('timon', [Validators.required]),
-      email: new FormControl('timon.schmid@bluewin.ch', [Validators.required]),
-      password: new FormControl('timon1234', [Validators.required]),
-      confirmPassword: new FormControl('timon1234', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl('', [Validators.required]),
     }, {
       validators: [this.fieldsEqualValueValidator.validate('password', 'confirmPassword')]
     });
