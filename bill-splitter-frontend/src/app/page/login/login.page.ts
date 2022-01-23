@@ -14,7 +14,12 @@ export class LoginPage implements OnInit {
   isSubmitted = false;
   isLoginSuccessful = true;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  }
+
+  get errorControl() {
+    return this.loginForm.controls;
+  }
 
   ngOnInit() {
     this.buildForm();
@@ -32,9 +37,6 @@ export class LoginPage implements OnInit {
     }
   }
 
-  get errorControl() {
-    return this.loginForm.controls;
-  }
 
   private buildForm(): void {
     this.loginForm = new FormGroup({
