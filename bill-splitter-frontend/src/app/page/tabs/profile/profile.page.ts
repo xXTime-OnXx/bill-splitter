@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AvatarService} from '../../../service/user/avatar.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  user: any;
 
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    this.user = ProfilePage.loadUser();
+  }
+
+  changeAvatar(): void {
+  }
+
+  private static loadUser(): any {
+    return {
+      avatar: AvatarService.getAvatarUrl('woman-curly-hair.png')
+    }
+  }
 }
