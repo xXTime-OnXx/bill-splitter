@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content class="ion-float-sm-end">
   <div class="login-header ion-padding">
     <div class="ion-text-center">
       <img
@@ -12,28 +12,33 @@
   <div class="login-body ion-padding">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <ion-item class="ion-margin">
-        <ion-icon class="medium-size" slot="start" name="person-outline"></ion-icon>
+        <ion-icon class="input-icon" slot="start" name="person-outline"></ion-icon>
         <ion-input formControlName="username" class="login-input" type="text" placeholder="Username"></ion-input>
       </ion-item>
       <ion-item class="ion-margin">
-        <ion-icon class="medium-size" slot="start" name="lock-closed-outline"></ion-icon>
+        <ion-icon class="input-icon" slot="start" name="lock-closed-outline"></ion-icon>
         <ion-input formControlName="password" class="login-input" type="password" placeholder="Password"></ion-input>
       </ion-item>
 
-      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.username.errors?.required && !errorControl.password.errors?.required">
+      <ion-text color="error" class="ion-padding"
+                *ngIf="isSubmitted && isLoginSuccessful && errorControl.username.errors?.required && !errorControl.password.errors?.required">
         Username is required.
-      </span>
-      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && !errorControl.username.errors?.required">
+      </ion-text>
+      <ion-text color="error" class="ion-padding"
+                *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && !errorControl.username.errors?.required">
         Password is required.
-      </span>
-      <span class="error ion-padding" *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && errorControl.username.errors?.required">
+      </ion-text>
+      <ion-text color="danger" class="ion-padding"
+                *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && errorControl.username.errors?.required">
         Username & Password are required.
-      </span>
-      <span class="error ion-padding" *ngIf="!isLoginSuccessful">
+      </ion-text>
+      <ion-text color="error" class="ion-padding" *ngIf="!isLoginSuccessful">
         Username or Password is incorrect.
-      </span>
+      </ion-text>
 
-      <ion-button type="submit" shape="round" class="login-button ion-margin" expand="block">Login</ion-button>
+      <ion-button type="submit" shape="round" color="bill-splitter" class="login-button ion-margin" expand="block">
+        Login
+      </ion-button>
       <div class="ion-text-center">
         <p routerLink="#" class="ion-text-center">
           Forgot Password?

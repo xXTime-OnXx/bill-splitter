@@ -1,3 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <ion-grid class="padding-top">
     <ion-row class="ion-justify-content-center">
@@ -5,18 +13,15 @@
                alt="user avatar"
                [src]="user.avatar"></ion-img>
     </ion-row>
-    <ion-row class="ion-padding-top ion-justify-content-center" (click)="changeAvatar()">
-      <ion-col class="ion-align-self-center ion-text-end" size="5">
-        <ion-text class="medium-text">Change Avatar</ion-text>
-      </ion-col>
-      <ion-col class="ion-align-self-center ion-text-start" size="2">
-        <ion-icon class="medium-icon" name="create-outline"></ion-icon>
-      </ion-col>
+    <ion-row class="ion-justify-content-center ion-margin-top" (click)="changeAvatar()">
+      <ion-text class="change-avatar-text">Change Avatar</ion-text>
     </ion-row>
   </ion-grid>
 
-  <div class="small-margin-top ion-padding">
-    <ion-title class="user-information-title">User Information</ion-title>
+  <div class="ion-padding">
+    <ion-item-divider>
+      <ion-label class="user-information-title">User Information</ion-label>
+    </ion-item-divider>
     <ion-item class="ion-margin">
       <ion-icon class="input-icon" slot="start" name="person-outline"></ion-icon>
       <ion-input></ion-input>

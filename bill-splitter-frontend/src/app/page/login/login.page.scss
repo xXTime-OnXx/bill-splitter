@@ -2,10 +2,8 @@
   padding-top: 50px;
 }
 
-.login-body {
-  margin: auto;
-  padding-top: 40px;
-  max-width: 600px;
+.bill-icon {
+  width: 100px;
 }
 
 .login-title {
@@ -13,19 +11,14 @@
   font-size: 40px;
 }
 
-.login-input {
-  --padding-start: 0px;
-}
-
-.error {
-  color: red;
+.login-body {
+  padding-top: 40px;
 }
 
 .login-button {
   margin-top:  30px;
   margin-left: 30px;
   margin-right: 30px;
-  --background: #FFAF40;
 }
 
 .login-footer {
@@ -37,18 +30,6 @@
 
 .login-link {
   text-decoration: none;
-  color: #FFAF40;
+  color: var(--ion-color-bill-splitter);
 }
 
-.bill-icon {
-  width: 100px;
-}
-
-.medium-size {
-  font-size: 25px;
-  color: #FFAF40;
-}
-
-ion-item {
-  border-radius: 5px;
-}

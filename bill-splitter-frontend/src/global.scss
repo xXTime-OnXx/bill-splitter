@@ -24,3 +24,30 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-content {
+  align-self: center;
+  max-width: 700px;
+}
+
+ion-item {
+  border-radius: 5px;
+}
+
+.ion-color-bill-splitter {
+  --ion-color-base: var(--ion-color-bill-splitter);
+  --ion-color-base-rgb: var(--ion-color-bill-splitter-rgb);
+  --ion-color-contrast: var(--ion-color-bill-splitter-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-bill-splitter-contrast-rgb);
+  --ion-color-shade: var(--ion-color-bill-splitter-shade);
+  --ion-color-tint: var(--ion-color-bill-splitter-tint);
+}
+
+.input-icon {
+  font-size: 25px;
+  color: var(--ion-color-bill-splitter);
+}
+
+
+
+

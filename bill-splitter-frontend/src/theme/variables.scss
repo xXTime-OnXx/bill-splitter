@@ -74,6 +74,14 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Bill Splitter Color **/
+  --ion-color-bill-splitter: #FFAF40;
+  --ion-color-bill-splitter-rgb: 255,175,64;
+  --ion-color-bill-splitter-contrast: #000000;
+  --ion-color-bill-splitter-contrast-rgb: 0,0,0;
+  --ion-color-bill-splitter-shade: #e09a38;
+  --ion-color-bill-splitter-tint: #ffb753;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +153,13 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-color-bill-splitter: #FFAF40;
+    --ion-color-bill-splitter-rgb: 255,175,64;
+    --ion-color-bill-splitter-contrast: #ffffff;
+    --ion-color-bill-splitter-contrast-rgb: 255,255,255;
+    --ion-color-bill-splitter-shade: #e09a38;
+    --ion-color-bill-splitter-tint: #ffb753;
   }
 
   /*
