@@ -1,8 +1,8 @@
 {
-  "name": "app",
-  "short_name": "app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Bill Splitter",
+  "short_name": "Bill Splitter",
+  "theme_color": "#FFAF40",
+  "background_color": "#121212",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
