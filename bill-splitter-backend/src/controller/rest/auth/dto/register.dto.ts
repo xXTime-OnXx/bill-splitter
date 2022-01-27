@@ -1,7 +1,6 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { User } from '../../../domain/aggregate/user/user.type';
-import { Role } from '../../../domain/aggregate/user/role.enum';
+import { CreateUser } from '../../../../domain/usecase/user/dto/create-user';
 
 export class RegisterDto {
   @ApiProperty()
@@ -19,13 +18,13 @@ export class RegisterDto {
   @IsString()
   email: string;
 
-  public static toUser(registerDto: RegisterDto): User {
+  public static toCreateUser(registerDto: RegisterDto): CreateUser {
     return {
-      id: undefined,
       username: registerDto.username,
+      avatar: null,
       password: registerDto.password,
       email: registerDto.email,
-      roles: [Role.USER],
+      roles: [],
     };
   }
 }

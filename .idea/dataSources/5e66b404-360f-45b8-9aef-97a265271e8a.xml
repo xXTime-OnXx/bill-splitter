@@ -3,9 +3,9 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.32">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>747</IntrospectionStateNumber>
+      <IntrospectionStateNumber>744</IntrospectionStateNumber>
       <ServerVersion>14.1</ServerVersion>
-      <StartupTime>1641646520</StartupTime>
+      <StartupTime>1643312778</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -686,7 +686,7 @@ true Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
-true Pacific/Fiji
+false Pacific/Fiji
 false Pacific/Funafuti
 false Pacific/Galapagos
 false Pacific/Gambier
@@ -1322,7 +1322,7 @@ true posix/Pacific/Easter
 false posix/Pacific/Efate
 false posix/Pacific/Enderbury
 false posix/Pacific/Fakaofo
-true posix/Pacific/Fiji
+false posix/Pacific/Fiji
 false posix/Pacific/Funafuti
 false posix/Pacific/Galapagos
 false posix/Pacific/Gambier
@@ -1395,9 +1395,9 @@ false posixrules
 13391||10|C|G
 13391||-9223372036854775808|U|G
 13391||10|U|G</Grants>
-      <IntrospectionStateNumber>748</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
-      <Relations>sequence|table|16412|16413|1
+      <Relations>sequence|table|16437|16438|1
 </Relations>
       <OwnerName>bill-splitter</OwnerName>
     </database>
@@ -4778,7 +4778,7 @@ false posixrules
     <extension id="256" parent="2" name="uuid-ossp">
       <Comment>generate universally unique identifiers (UUIDs)</Comment>
       <ObjectId>16385</ObjectId>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Version>1.1</Version>
       <ExtSchemaId>2200</ExtSchemaId>
       <ExtSchemaName>public</ExtSchemaName>
@@ -4831,149 +4831,162 @@ false posixrules
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>748</IntrospectionStateNumber>
+      <IntrospectionStateNumber>745</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>bill-splitter</OwnerName>
     </schema>
-    <object-type id="264" parent="263" name="user_roles_enum">
-      <Labels>user
-admin</Labels>
+    <object-type id="264" parent="263" name="user_avatar_enum">
+      <Labels>boy_glasses
+girl_glasses
+boy_headphones
+girl_headphones
+man_airpods
+woman_flowers
+man_beard
+woman_curly_hair
+man_moustache
+woman_demon</Labels>
       <ObjectId>16397</ObjectId>
-      <StateNumber>742</StateNumber>
+      <StateNumber>739</StateNumber>
       <SubCategory>enum</SubCategory>
       <SubKind>enum</SubKind>
       <OwnerName>bill-splitter</OwnerName>
     </object-type>
-    <routine id="265" parent="263" name="uuid_generate_v1">
+    <object-type id="265" parent="263" name="user_roles_enum">
+      <Labels>user
+admin</Labels>
+      <ObjectId>16418</ObjectId>
+      <StateNumber>739</StateNumber>
+      <SubCategory>enum</SubCategory>
+      <SubKind>enum</SubKind>
+      <OwnerName>bill-splitter</OwnerName>
+    </object-type>
+    <routine id="266" parent="263" name="uuid_generate_v1">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16391</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="266" parent="263" name="uuid_generate_v1mc">
+    <routine id="267" parent="263" name="uuid_generate_v1mc">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16392</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="267" parent="263" name="uuid_generate_v3">
+    <routine id="268" parent="263" name="uuid_generate_v3">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16393</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="268" parent="263" name="uuid_generate_v4">
+    <routine id="269" parent="263" name="uuid_generate_v4">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16394</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="269" parent="263" name="uuid_generate_v5">
+    <routine id="270" parent="263" name="uuid_generate_v5">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16395</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="270" parent="263" name="uuid_nil">
+    <routine id="271" parent="263" name="uuid_nil">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16386</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="271" parent="263" name="uuid_ns_dns">
+    <routine id="272" parent="263" name="uuid_ns_dns">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16387</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="272" parent="263" name="uuid_ns_oid">
+    <routine id="273" parent="263" name="uuid_ns_oid">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16389</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="273" parent="263" name="uuid_ns_url">
+    <routine id="274" parent="263" name="uuid_ns_url">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16388</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <routine id="274" parent="263" name="uuid_ns_x500">
+    <routine id="275" parent="263" name="uuid_ns_x500">
       <ConcurrencyKind>safe</ConcurrencyKind>
       <Cost>1.0</Cost>
       <ObjectId>16390</ObjectId>
       <Rows>0.0</Rows>
-      <StateNumber>741</StateNumber>
+      <StateNumber>738</StateNumber>
       <Strict>1</Strict>
       <VolatilityKind>immutable</VolatilityKind>
       <LanguageName>c</LanguageName>
       <OwnerName>bill-splitter</OwnerName>
     </routine>
-    <sequence id="275" parent="263" name="migrations_id_seq">
+    <sequence id="276" parent="263" name="migrations_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>16412</ObjectId>
-      <StateNumber>743</StateNumber>
+      <ObjectId>16437</ObjectId>
+      <StateNumber>740</StateNumber>
       <OwnerName>bill-splitter</OwnerName>
     </sequence>
-    <table id="276" parent="263" name="migrations">
-      <ObjectId>16413</ObjectId>
-      <StateNumber>743</StateNumber>
+    <table id="277" parent="263" name="migrations">
+      <ObjectId>16438</ObjectId>
+      <StateNumber>740</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>bill-splitter</OwnerName>
     </table>
-    <table id="277" parent="263" name="user">
-      <ObjectId>16401</ObjectId>
-      <StateNumber>742</StateNumber>
+    <table id="278" parent="263" name="user">
+      <ObjectId>16423</ObjectId>
+      <StateNumber>739</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>bill-splitter</OwnerName>
     </table>
-    <argument id="278" parent="265">
-      <ArgumentDirection>R</ArgumentDirection>
-      <DataType>uuid|0s</DataType>
-    </argument>
     <argument id="279" parent="266">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
@@ -4982,33 +4995,33 @@ admin</Labels>
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="281" parent="267" name="namespace">
+    <argument id="281" parent="268">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>uuid|0s</DataType>
+    </argument>
+    <argument id="282" parent="268" name="namespace">
       <DataType>uuid|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="282" parent="267" name="name">
+    <argument id="283" parent="268" name="name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
-    </argument>
-    <argument id="283" parent="268">
-      <ArgumentDirection>R</ArgumentDirection>
-      <DataType>uuid|0s</DataType>
     </argument>
     <argument id="284" parent="269">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <argument id="285" parent="269" name="namespace">
+    <argument id="285" parent="270">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>uuid|0s</DataType>
+    </argument>
+    <argument id="286" parent="270" name="namespace">
       <DataType>uuid|0s</DataType>
       <Position>1</Position>
     </argument>
-    <argument id="286" parent="269" name="name">
+    <argument id="287" parent="270" name="name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
-    </argument>
-    <argument id="287" parent="270">
-      <ArgumentDirection>R</ArgumentDirection>
-      <DataType>uuid|0s</DataType>
     </argument>
     <argument id="288" parent="271">
       <ArgumentDirection>R</ArgumentDirection>
@@ -5026,114 +5039,148 @@ admin</Labels>
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>uuid|0s</DataType>
     </argument>
-    <column id="292" parent="276" name="id">
+    <argument id="292" parent="275">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>uuid|0s</DataType>
+    </argument>
+    <column id="293" parent="277" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;migrations_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>740</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="293" parent="276" name="timestamp">
+    <column id="294" parent="277" name="timestamp">
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>740</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="294" parent="276" name="name">
+    <column id="295" parent="277" name="name">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>743</StateNumber>
+      <StateNumber>740</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="295" parent="276" name="PK_8c82d7f526340ab734260ea46be">
+    <index id="296" parent="277" name="PK_8c82d7f526340ab734260ea46be">
       <ClassIds>1978</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
-      <ObjectId>16419</ObjectId>
+      <ObjectId>16444</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>743</StateNumber>
+      <StateNumber>740</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="296" parent="276" name="PK_8c82d7f526340ab734260ea46be">
+    <key id="297" parent="277" name="PK_8c82d7f526340ab734260ea46be">
       <ColNames>id</ColNames>
-      <ObjectId>16420</ObjectId>
+      <ObjectId>16445</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>743</StateNumber>
-      <UnderlyingIndexId>16419</UnderlyingIndexId>
+      <StateNumber>740</StateNumber>
+      <UnderlyingIndexId>16444</UnderlyingIndexId>
     </key>
-    <column id="297" parent="277" name="id">
+    <column id="298" parent="278" name="id">
       <DataType>uuid|0s</DataType>
       <DefaultExpression>uuid_generate_v4()</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>742</StateNumber>
+      <StateNumber>739</StateNumber>
       <TypeId>2950</TypeId>
     </column>
-    <column id="298" parent="277" name="username">
+    <column id="299" parent="278" name="username">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>742</StateNumber>
+      <StateNumber>739</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="299" parent="277" name="password">
-      <DataType>varchar|0s</DataType>
+    <column id="300" parent="278" name="avatar">
+      <DataType>user_avatar_enum|0s</DataType>
+      <DefaultExpression>&apos;woman_curly_hair&apos;::user_avatar_enum</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>742</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>739</StateNumber>
+      <TypeId>16397</TypeId>
     </column>
-    <column id="300" parent="277" name="email">
+    <column id="301" parent="278" name="password">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>742</StateNumber>
+      <StateNumber>739</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="301" parent="277" name="roles">
+    <column id="302" parent="278" name="email">
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>739</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="303" parent="278" name="phone">
+      <DataType>varchar|0s</DataType>
+      <Position>6</Position>
+      <StateNumber>739</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="304" parent="278" name="roles">
       <DataType>user_roles_enum[]|0s</DataType>
       <DefaultExpression>&apos;{user}&apos;::user_roles_enum[]</DefaultExpression>
       <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StateNumber>742</StateNumber>
-      <TypeId>16396</TypeId>
+      <Position>7</Position>
+      <StateNumber>739</StateNumber>
+      <TypeId>16417</TypeId>
     </column>
-    <index id="302" parent="277" name="PK_cace4a159ff9f2512dd42373760">
+    <index id="305" parent="278" name="PK_cace4a159ff9f2512dd42373760">
       <ClassIds>10065</ClassIds>
       <ColNames>id</ColNames>
       <CollationIds>0</CollationIds>
-      <ObjectId>16408</ObjectId>
+      <ObjectId>16431</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>742</StateNumber>
+      <StateNumber>739</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="303" parent="277" name="UQ_78a916df40e02a9deb1c4b75edb">
+    <index id="306" parent="278" name="UQ_78a916df40e02a9deb1c4b75edb">
       <ClassIds>3126</ClassIds>
       <ColNames>username</ColNames>
       <CollationIds>100</CollationIds>
       <CollationNames>default</CollationNames>
-      <ObjectId>16410</ObjectId>
-      <StateNumber>742</StateNumber>
+      <ObjectId>16433</ObjectId>
+      <StateNumber>739</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="304" parent="277" name="PK_cace4a159ff9f2512dd42373760">
+    <index id="307" parent="278" name="UQ_e12875dfb3b1d92d7d7c5377e22">
+      <ClassIds>3126</ClassIds>
+      <ColNames>email</ColNames>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ObjectId>16435</ObjectId>
+      <StateNumber>739</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="308" parent="278" name="PK_cace4a159ff9f2512dd42373760">
       <ColNames>id</ColNames>
-      <ObjectId>16409</ObjectId>
+      <ObjectId>16432</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>742</StateNumber>
-      <UnderlyingIndexId>16408</UnderlyingIndexId>
+      <StateNumber>739</StateNumber>
+      <UnderlyingIndexId>16431</UnderlyingIndexId>
     </key>
-    <key id="305" parent="277" name="UQ_78a916df40e02a9deb1c4b75edb">
+    <key id="309" parent="278" name="UQ_78a916df40e02a9deb1c4b75edb">
       <ColNames>username</ColNames>
-      <ObjectId>16411</ObjectId>
-      <StateNumber>742</StateNumber>
-      <UnderlyingIndexId>16410</UnderlyingIndexId>
+      <ObjectId>16434</ObjectId>
+      <StateNumber>739</StateNumber>
+      <UnderlyingIndexId>16433</UnderlyingIndexId>
+    </key>
+    <key id="310" parent="278" name="UQ_e12875dfb3b1d92d7d7c5377e22">
+      <ColNames>email</ColNames>
+      <ObjectId>16436</ObjectId>
+      <StateNumber>739</StateNumber>
+      <UnderlyingIndexId>16435</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

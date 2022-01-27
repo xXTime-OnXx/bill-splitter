@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {StorageService} from '../storage/storage.service';
 import {RegisterDto} from './register.dto';
+import {firstValueFrom} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,13 +19,12 @@ export class AuthService {
   public async login(username: string, password: string): Promise<boolean> {
     let response;
     try {
-      response = await this.http.post<{
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+      response = await firstValueFrom(this.http.post<{
         access_token: string;
       }>(environment.host + 'auth/login', {
         username,
         password
-      }).toPromise();
+      }));
       await this.storage.set(environment.bearerToken, response.access_token);
       return true;
     } catch (e) {
@@ -40,7 +40,7 @@ export class AuthService {
       password
     };
     try {
-      await this.http.post(environment.host + 'auth/register', registerDto).toPromise();
+      await firstValueFrom(this.http.post<void>(environment.host + 'auth/register', registerDto));
       return true;
     } catch (e) {
       console.error(e);

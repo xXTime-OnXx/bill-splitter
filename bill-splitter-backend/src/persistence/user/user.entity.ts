@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { Role } from '../../domain/aggregate/user/role.enum';
+import { Avatar } from '../../domain/aggregate/user/avatar.enum';
 
 @Entity('user')
 export class UserEntity extends BaseEntity {
@@ -11,11 +12,25 @@ export class UserEntity extends BaseEntity {
   })
   username: string;
 
+  @Column({
+    type: 'enum',
+    enum: Avatar,
+    default: Avatar.WOMAN_CURLY_HAIR,
+  })
+  avatar: Avatar;
+
   @Column()
   password: string;
 
-  @Column()
+  @Column({
+    unique: true,
+  })
   email: string;
+
+  @Column({
+    nullable: true,
+  })
+  phone: string;
 
   @Column({
     type: 'enum',

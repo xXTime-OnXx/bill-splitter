@@ -11,32 +11,43 @@
     <ion-row class="ion-justify-content-center">
       <ion-img class="avatar-size"
                alt="user avatar"
-               [src]="user.avatar"></ion-img>
+               [src]="avatarUrl"></ion-img>
     </ion-row>
     <ion-row class="ion-justify-content-center ion-margin-top" (click)="changeAvatar()">
-      <ion-text class="change-avatar-text">Change Avatar</ion-text>
+      <ion-text color="bill-splitter" class="change-avatar-text">Change Avatar</ion-text>
     </ion-row>
   </ion-grid>
 
   <div class="ion-padding">
-    <ion-item-divider>
-      <ion-label class="user-information-title">User Information</ion-label>
-    </ion-item-divider>
-    <ion-item class="ion-margin">
-      <ion-icon class="input-icon" slot="start" name="person-outline"></ion-icon>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="input-icon" slot="start" name="mail-outline"></ion-icon>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="input-icon" slot="start" name="call-outline"></ion-icon>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item class="ion-margin">
-      <ion-icon class="input-icon" slot="start" name="lock-closed-outline"></ion-icon>
-      <ion-input></ion-input>
-    </ion-item>
+    <form [formGroup]="userForm" (ngSubmit)="saveChanges()">
+      <ion-list class="transparent">
+        <ion-item-divider>
+          <ion-label class="user-information-title">User Information</ion-label>
+        </ion-item-divider>
+        <ion-item class="transparent-item ion-margin-top">
+          <ion-icon class="input-icon" slot="start" name="person-outline"></ion-icon>
+          <ion-input formControlName="username" placeholder="Username" type="text"></ion-input>
+        </ion-item>
+        <ion-item class="transparent-item ion-margin-top">
+          <ion-icon class="input-icon" slot="start" name="mail-outline"></ion-icon>
+          <ion-input formControlName="email" placeholder="Email" type="text"></ion-input>
+        </ion-item>
+        <ion-item class="transparent-item ion-margin-top">
+          <ion-icon class="input-icon" slot="start" name="call-outline"></ion-icon>
+          <ion-input formControlName="phone" placeholder="Phone Number" type="text"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button color="light" fill="outline" shape="round" expand="block">Cancel</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="bill-splitter" type="submit" fill="outline" shape="round" expand="block">Save
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
   </div>
 </ion-content>

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AvatarService} from '../../../service/user/avatar.service';
+import {AvatarService} from '../../../common/avatar/avatar.service';
+import {UserService} from '../../../service/user/user.service';
+import {User} from '../../../service/user/user.type';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -8,21 +11,38 @@ import {AvatarService} from '../../../service/user/avatar.service';
 })
 export class ProfilePage implements OnInit {
 
-  user: any;
+  public avatarUrl: string;
+  public userForm: FormGroup;
 
-  constructor() {
+  private user: User;
+
+  constructor(private userService: UserService) {
   }
 
-  ngOnInit() {
-    this.user = ProfilePage.loadUser();
+  async ngOnInit() {
+    this.createForm();
+    await this.loadUserInformation();
   }
 
-  changeAvatar(): void {
+  public changeAvatar(): void {
   }
 
-  private static loadUser(): any {
-    return {
-      avatar: AvatarService.getAvatarUrl('woman-curly-hair.png')
-    }
+  public saveChanges(): void {
+  }
+
+  private createForm(): void {
+    this.userForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      phone: new FormControl(''),
+    });
+  }
+
+  private async loadUserInformation(): Promise<void> {
+    this.user = await this.userService.getUserInformation();
+    this.avatarUrl = AvatarService.imageUrl(this.user.avatar);
+    this.userForm.get('username').patchValue(this.user.username);
+    this.userForm.get('email').patchValue(this.user.email);
+    this.userForm.get('phone').patchValue(this.user.phone);
   }
 }

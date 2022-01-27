@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { HashingService } from '../utils/hashing.service';
-import { User } from '../../aggregate/user/user.type';
 import { UserRepository } from '../../aggregate/user/user.repository';
+import { CreateUser } from './dto/create-user';
+import { Avatar } from '../../aggregate/user/avatar.enum';
 
 @Injectable()
 export class UserManager {
@@ -10,9 +11,12 @@ export class UserManager {
     private userRepository: UserRepository,
   ) {}
 
-  public async saveUser(user: User): Promise<void> {
-    user.password = await this.hashingService.hashPassword(user.password);
-    await this.userRepository.create(user);
+  public async saveUser(createUser: CreateUser): Promise<void> {
+    createUser.avatar = Avatar.WOMAN_CURLY_HAIR;
+    createUser.password = await this.hashingService.hashPassword(
+      createUser.password,
+    );
+    await this.userRepository.create(createUser);
   }
 
   public async checkPassword(
