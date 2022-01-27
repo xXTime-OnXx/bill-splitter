@@ -4,10 +4,10 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "start": "ng serve",
-    "frontend:dev": "ng serve",
-    "build": "ng build",
-    "build:prod": "ng build --configuration production",
+    "start": "ionic serve",
+    "frontend:dev": "ionic serve",
+    "build": "ionic build",
+    "build:prod": "ionic build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +26,7 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.1",
     "@ionic/angular": "^6.0.3",
+    "@ionic/cli": "^6.18.1",
     "@ionic/storage-angular": "^3.0.6",
     "rxjs": "~7.5.2",
     "tslib": "^2.2.0",
