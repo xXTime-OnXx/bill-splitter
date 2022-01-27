@@ -1,7 +1,7 @@
 {
   "name": "Bill Splitter",
   "short_name": "Bill Splitter",
-  "theme_color": "#FFAF40",
+  "theme_color": "#121212",
   "background_color": "#121212",
   "display": "standalone",
   "scope": "./",
