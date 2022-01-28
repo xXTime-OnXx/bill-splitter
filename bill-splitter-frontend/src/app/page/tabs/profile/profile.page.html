@@ -9,12 +9,14 @@
 <ion-content [fullscreen]="true">
   <ion-grid class="padding-top">
     <ion-row class="ion-justify-content-center">
-      <ion-img class="avatar-size"
-               alt="user avatar"
-               [src]="avatarUrl"></ion-img>
-    </ion-row>
-    <ion-row class="ion-justify-content-center ion-margin-top" (click)="changeAvatar()">
-      <ion-text color="bill-splitter" class="change-avatar-text">Change Avatar</ion-text>
+      <div class="avatar" (click)="changeAvatar()">
+        <ion-img class="avatar-size"
+                 alt="user avatar"
+                 [src]="avatarUrl"></ion-img>
+        <div class="edit-avatar-container">
+          <ion-icon color="bill-splitter" class="edit-avatar-icon" name="brush"></ion-icon>
+        </div>
+      </div>
     </ion-row>
   </ion-grid>
 
@@ -40,7 +42,9 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button color="bill-splitter" fill="outline" shape="round" expand="block" (click)="loadUserInformation()">Cancel</ion-button>
+            <ion-button color="bill-splitter" fill="outline" shape="round" expand="block"
+                        (click)="loadUserInformation()">Cancel
+            </ion-button>
           </ion-col>
           <ion-col>
             <ion-button color="bill-splitter" type="submit" shape="round" expand="block">Save
