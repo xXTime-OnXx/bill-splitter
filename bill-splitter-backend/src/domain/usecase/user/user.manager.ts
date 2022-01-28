@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
-import { HashingService } from '../utils/hashing.service';
-import { UserRepository } from '../../aggregate/user/user.repository';
-import { CreateUser } from './dto/create-user';
-import { Avatar } from '../../aggregate/user/avatar.enum';
+import {Injectable} from '@nestjs/common';
+import {HashingService} from '../utils/hashing.service';
+import {UserRepository} from '../../aggregate/user/user.repository';
+import {CreateUser} from './dto/create-user';
+import {Avatar} from '../../aggregate/user/avatar.enum';
+import {UpdateUser} from './dto/update-user';
 
 @Injectable()
 export class UserManager {
@@ -28,5 +29,9 @@ export class UserManager {
       password,
       hashedPassword,
     );
+  }
+
+  public async updateUser(userId: string, updateUser: UpdateUser): Promise<void> {
+    await this.userRepository.update(userId, updateUser);
   }
 }

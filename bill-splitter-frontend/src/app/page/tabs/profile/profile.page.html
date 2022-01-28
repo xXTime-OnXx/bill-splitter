@@ -30,7 +30,7 @@
         </ion-item>
         <ion-item class="transparent-item ion-margin-top">
           <ion-icon class="input-icon" slot="start" name="mail-outline"></ion-icon>
-          <ion-input formControlName="email" placeholder="Email" type="text"></ion-input>
+          <ion-input formControlName="email" placeholder="Email" type="email"></ion-input>
         </ion-item>
         <ion-item class="transparent-item ion-margin-top">
           <ion-icon class="input-icon" slot="start" name="call-outline"></ion-icon>
@@ -40,10 +40,10 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button color="light" fill="outline" shape="round" expand="block">Cancel</ion-button>
+            <ion-button color="bill-splitter" fill="outline" shape="round" expand="block" (click)="loadUserInformation()">Cancel</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="bill-splitter" type="submit" fill="outline" shape="round" expand="block">Save
+            <ion-button color="bill-splitter" type="submit" shape="round" expand="block">Save
             </ion-button>
           </ion-col>
         </ion-row>
