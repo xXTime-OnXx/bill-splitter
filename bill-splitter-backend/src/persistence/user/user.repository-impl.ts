@@ -8,7 +8,6 @@ import {UpdateUser} from '../../domain/usecase/user/dto/update-user';
 @Injectable()
 export class UserRepositoryImpl extends UserRepository {
     async read(userId: string): Promise<User> {
-        console.log(userId)
         return await UserEntity.findOne(userId);
     }
 
@@ -31,8 +30,6 @@ export class UserRepositoryImpl extends UserRepository {
     }
 
     async update(userId: string, updateUser: UpdateUser): Promise<void> {
-        console.log(userId);
-        console.log(updateUser);
         await UserEntity.update(userId, {
             username: updateUser.username,
             email: updateUser.email,

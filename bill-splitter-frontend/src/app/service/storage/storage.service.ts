@@ -9,14 +9,15 @@ export class StorageService {
 
   private storage: Storage;
 
-  constructor(private localStorage: Storage) {}
+  constructor(private localStorage: Storage) {
+  }
 
   public async setup() {
     this.storage = await this.localStorage.create();
   }
 
   public async get(key: string): Promise<string> {
-        return await this.storage.get(key);
+    return await this.storage.get(key);
   }
 
   public async set(key: string, value: string): Promise<void> {
@@ -27,7 +28,7 @@ export class StorageService {
     try {
       await this.storage.remove(key);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   }
 

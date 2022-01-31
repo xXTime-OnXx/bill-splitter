@@ -15,11 +15,11 @@ A project, useful for splitting the bill in a group of people.
 ## Test
 
 ## Certbot
-
 Renew certificates
 
 ```shell
 $ docker compose run --rm certbot renew
 ```
 
-## Support
+## Credits
+<a href="https://www.flaticon.com/authors/freepik" title="Freepik Icons">Icons created by Freepik - Flaticon</a>

@@ -23,7 +23,6 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req, @Body() loginDto: LoginDto): Promise<any> {
-    console.log(req.user)
     return this.authService.login(req.user);
   }
 }

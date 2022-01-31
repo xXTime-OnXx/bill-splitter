@@ -21,11 +21,11 @@
         <ion-input formControlName="password" class="login-input" type="password" placeholder="Password"></ion-input>
       </ion-item>
 
-      <ion-text color="error" class="ion-padding"
+      <ion-text color="danger" class="ion-padding"
                 *ngIf="isSubmitted && isLoginSuccessful && errorControl.username.errors?.required && !errorControl.password.errors?.required">
         Username is required.
       </ion-text>
-      <ion-text color="error" class="ion-padding"
+      <ion-text color="danger" class="ion-padding"
                 *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && !errorControl.username.errors?.required">
         Password is required.
       </ion-text>
@@ -33,7 +33,7 @@
                 *ngIf="isSubmitted && isLoginSuccessful && errorControl.password.errors?.required && errorControl.username.errors?.required">
         Username & Password are required.
       </ion-text>
-      <ion-text color="error" class="ion-padding" *ngIf="!isLoginSuccessful">
+      <ion-text color="danger" class="ion-padding" *ngIf="!isLoginSuccessful">
         Username or Password is incorrect.
       </ion-text>
 
