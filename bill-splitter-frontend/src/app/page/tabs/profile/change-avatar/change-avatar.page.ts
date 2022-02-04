@@ -11,10 +11,12 @@ export class ChangeAvatarPage implements OnInit {
 
   public defaultBackHref: string = "/tabs/profile";
   public avatarUrl: string = AvatarService.imageUrl(Avatar.MAN_BEARD);
+  public availableAvatars: string[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.availableAvatars = Object.values(Avatar).map(AvatarService.imageUrl);
   }
 
 }

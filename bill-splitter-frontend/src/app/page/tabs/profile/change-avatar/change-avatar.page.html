@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-grid class="padding-top">
     <ion-row class="ion-justify-content-center">
       <ion-img class="avatar-size"
@@ -17,7 +17,9 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid>
-
-  </ion-grid>
+  <div class="padding-top avatar-list">
+    <div class="avatar-list-item" *ngFor="let avatar of availableAvatars">
+      <ion-img [src]="avatar"></ion-img>
+    </div>
+  </div>
 </ion-content>

@@ -6,3 +6,14 @@
   width: 128px;
   margin: 0 8px;
 }
+
+.avatar-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.avatar-list-item {
+  width: 96px;
+}

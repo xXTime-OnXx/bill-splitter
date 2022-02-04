@@ -5,6 +5,6 @@ export class AvatarService {
   private static IMAGE_FORMAT: string = '.png';
 
   public static imageUrl(avatar: Avatar): string {
-    return this.AVATAR_BASE_URL + avatar.toString().toLowerCase() + this.IMAGE_FORMAT;
+    return AvatarService.AVATAR_BASE_URL + avatar.toString().toLowerCase() + AvatarService.IMAGE_FORMAT;
   }
 }
