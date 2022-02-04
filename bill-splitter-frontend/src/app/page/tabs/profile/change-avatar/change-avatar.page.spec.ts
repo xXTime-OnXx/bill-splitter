@@ -1,7 +1,7 @@
 import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import {IonicModule} from '@ionic/angular';
 
-import {ChangeAvatarPage} from './change-avatar-page.component';
+import {ChangeAvatarPage} from './change-avatar.page';
 
 describe('AvatarPickerPage', () => {
   let component: ChangeAvatarPage;

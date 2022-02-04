@@ -3,7 +3,7 @@ import {AvatarService} from '../../../common/avatar/avatar.service';
 import {UserService} from '../../../service/user/user.service';
 import {User} from '../../../service/user/user.type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ViewWillEnter} from '@ionic/angular';
+import {NavController, ViewWillEnter} from '@ionic/angular';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
 
 @Component({
@@ -18,7 +18,8 @@ export class ProfilePage implements OnInit, ViewWillEnter {
 
   private user: User;
 
-  constructor(private userService: UserService) {
+  constructor(private router: NavController,
+              private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -29,8 +30,8 @@ export class ProfilePage implements OnInit, ViewWillEnter {
     await this.loadUserInformation();
   }
 
-  public changeAvatar(): void {
-    // https://github.com/xXTime-OnXx/bill-splitter/issues/8
+  public async changeAvatar(): Promise<void> {
+    await this.router.navigateForward(['profile/change-avatar']);
   }
 
   public async saveChanges(): Promise<void> {

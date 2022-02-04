@@ -6,7 +6,7 @@ import {IonicModule} from '@ionic/angular';
 
 import {ChangeAvatarPageRoutingModule} from './change-avatar-routing.module';
 
-import {ChangeAvatarPage} from './change-avatar-page.component';
+import {ChangeAvatarPage} from './change-avatar.page';
 
 @NgModule({
   imports: [
