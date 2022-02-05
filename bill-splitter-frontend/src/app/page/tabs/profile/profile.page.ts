@@ -3,7 +3,7 @@ import {AvatarService} from '../../../common/avatar/avatar.service';
 import {UserService} from '../../../service/user/user.service';
 import {User} from '../../../service/user/user.type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {NavController, ViewWillEnter} from '@ionic/angular';
+import {NavController} from '@ionic/angular';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
 
 @Component({
@@ -11,7 +11,7 @@ import {UpdateUser} from '../../../service/user/dto/update-user.dto';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit, ViewWillEnter {
+export class ProfilePage implements OnInit {
 
   public avatarUrl: string;
   public userForm: FormGroup;
@@ -23,13 +23,8 @@ export class ProfilePage implements OnInit, ViewWillEnter {
   }
 
   ngOnInit(): void {
-    console.log('OnInit')
     this.createForm();
     this.subscribeUserDetails();
-  }
-
-  async ionViewWillEnter(): Promise<void> {
-    console.log('ViewWillEnter')
   }
 
   public async changeAvatar(): Promise<void> {
