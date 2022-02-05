@@ -27,21 +27,12 @@ export class ChangeAvatarPage implements OnInit {
   }
 
   private loadSelectableAvatars(): void {
-    this.availableAvatars = Object.values(Avatar)
-      .map((avatar: Avatar) => {
-        return {
-          avatar: avatar,
-          avatarUrl: AvatarService.imageUrl(avatar)
-        }
-      });
+    this.availableAvatars = Object.values(Avatar).map(ChangeAvatarPage.createSelectableAvatar);
   }
 
   private loadUserAvatar(): void {
     const userAvatar: Avatar = this.route.snapshot.paramMap.get('avatar') as Avatar;
-    this.selectedAvatar = {
-      avatar: userAvatar,
-      avatarUrl: AvatarService.imageUrl(userAvatar)
-    };
+    this.selectedAvatar = ChangeAvatarPage.createSelectableAvatar(userAvatar);
   }
 
   public async changeAvatar(avatar: SelectableAvatar): Promise<void> {
@@ -51,5 +42,12 @@ export class ChangeAvatarPage implements OnInit {
   public async saveSelectedAvatar(): Promise<void> {
     await this.userService.updateAvatar(this.selectedAvatar.avatar);
     await this.router.navigate(['/tabs/profile']);
+  }
+
+  private static createSelectableAvatar(userAvatar: Avatar) {
+    return {
+      avatar: userAvatar,
+      avatarUrl: AvatarService.imageUrl(userAvatar)
+    };
   }
 }
