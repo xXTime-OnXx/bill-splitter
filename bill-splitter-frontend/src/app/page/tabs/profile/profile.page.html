@@ -3,6 +3,9 @@
     <ion-title>
       Profile
     </ion-title>
+    <ion-buttons slot="end" class="ion-margin-end">
+      <ion-button color="bill-splitter" (click)="saveChanges()">Save</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -21,7 +24,7 @@
   </ion-grid>
 
   <div class="ion-padding">
-    <form [formGroup]="userForm" (ngSubmit)="saveChanges()">
+    <form [formGroup]="userForm">
       <ion-list class="transparent">
         <ion-item-divider>
           <ion-label class="user-information-title">User Information</ion-label>
@@ -39,19 +42,6 @@
           <ion-input formControlName="phone" placeholder="Phone Number" type="text"></ion-input>
         </ion-item>
       </ion-list>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-button color="bill-splitter" fill="outline" shape="round" expand="block"
-                        (click)="loadUserInformation()">Cancel
-            </ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button color="bill-splitter" type="submit" shape="round" expand="block">Save
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
     </form>
   </div>
 </ion-content>

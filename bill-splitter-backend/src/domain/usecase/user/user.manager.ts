@@ -31,7 +31,11 @@ export class UserManager {
     );
   }
 
-  public async updateUser(userId: string, updateUser: UpdateUser): Promise<void> {
+  public async update(userId: string, updateUser: UpdateUser): Promise<void> {
     await this.userRepository.update(userId, updateUser);
+  }
+
+  public async updateAvatar(userId: string, avatar: Avatar): Promise<void> {
+    await this.userRepository.updateAvatar(userId, avatar);
   }
 }

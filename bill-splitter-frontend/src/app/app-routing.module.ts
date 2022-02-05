@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./page/tabs/profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
-    path: 'profile/change-avatar',
+    path: 'profile/change-avatar/:avatar',
     loadChildren: () => import('./page/tabs/profile/change-avatar/change-avatar.module').then(m => m.ChangeAvatarPageModule)
   }
 ];

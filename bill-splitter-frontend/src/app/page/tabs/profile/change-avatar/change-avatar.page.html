@@ -5,6 +5,9 @@
       <ion-back-button [defaultHref]="defaultBackHref"></ion-back-button>
     </ion-buttons>
     <ion-title>Avatars</ion-title>
+    <ion-buttons slot="end" class="ion-margin-end">
+      <ion-button color="bill-splitter" (click)="saveSelectedAvatar()">Save</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,13 +16,13 @@
     <ion-row class="ion-justify-content-center">
       <ion-img class="avatar-size"
                alt="user avatar"
-               [src]="avatarUrl"></ion-img>
+               [src]="selectedAvatar.avatarUrl"></ion-img>
     </ion-row>
   </ion-grid>
 
-  <div class="padding-top avatar-list">
-    <div class="avatar-list-item" *ngFor="let avatar of availableAvatars">
-      <ion-img [src]="avatar"></ion-img>
+  <div class="ion-padding avatar-list">
+    <div class="avatar-list-item" *ngFor="let selectable of availableAvatars">
+      <ion-img class="selectable-avatar" [src]="selectable.avatarUrl" (click)="changeAvatar(selectable)"></ion-img>
     </div>
   </div>
 </ion-content>

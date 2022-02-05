@@ -18,20 +18,22 @@ export class ProfilePage implements OnInit, ViewWillEnter {
 
   private user: User;
 
-  constructor(private router: NavController,
+  constructor(private navCtrl: NavController,
               private userService: UserService) {
   }
 
   ngOnInit(): void {
+    console.log('OnInit')
     this.createForm();
+    this.subscribeUserDetails();
   }
 
   async ionViewWillEnter(): Promise<void> {
-    await this.loadUserInformation();
+    console.log('ViewWillEnter')
   }
 
   public async changeAvatar(): Promise<void> {
-    await this.router.navigateForward(['profile/change-avatar']);
+    await this.navCtrl.navigateForward(['profile/change-avatar', this.user.avatar]);
   }
 
   public async saveChanges(): Promise<void> {
@@ -40,15 +42,16 @@ export class ProfilePage implements OnInit, ViewWillEnter {
     }
     const updateUser = this.createUpdateUser();
     await this.userService.updateUserInformation(updateUser);
-    await this.loadUserInformation();
   }
 
-  public async loadUserInformation(): Promise<void> {
-    this.user = await this.userService.getUserInformation();
-    this.avatarUrl = AvatarService.imageUrl(this.user.avatar);
-    this.userForm.get('username').patchValue(this.user.username);
-    this.userForm.get('email').patchValue(this.user.email);
-    this.userForm.get('phone').patchValue(this.user.phone);
+  public subscribeUserDetails(): void {
+    this.userService.getUserInformation().subscribe((user: User) => {
+      this.user = user;
+      this.avatarUrl = AvatarService.imageUrl(user.avatar);
+      this.userForm.get('username').patchValue(user.username);
+      this.userForm.get('email').patchValue(user.email);
+      this.userForm.get('phone').patchValue(user.phone);
+    });
   }
 
   private createForm(): void {
