@@ -14,19 +14,19 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <ion-item class="ion-margin">
         <ion-icon class="input-icon" slot="start" name="person-outline"></ion-icon>
-        <ion-input formControlName="username" class="register-input" type="text" placeholder="Username"></ion-input>
+        <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
       </ion-item>
       <ion-item class="ion-margin">
         <ion-icon class="input-icon" slot="start" name="mail-outline"></ion-icon>
-        <ion-input formControlName="email" class="register-input" type="email" placeholder="Email"></ion-input>
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
       </ion-item>
       <ion-item class="ion-margin">
         <ion-icon class="input-icon" slot="start" name="lock-closed-outline"></ion-icon>
-        <ion-input formControlName="password" class="register-input" type="password" placeholder="Password"></ion-input>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
       </ion-item>
       <ion-item class="ion-margin">
         <ion-icon class="input-icon" slot="start" name="lock-open-outline"></ion-icon>
-        <ion-input formControlName="confirmPassword" class="register-input" type="password"
+        <ion-input formControlName="confirmPassword" type="password"
                    placeholder="Repeat Password"></ion-input>
       </ion-item>
       <ion-button color="bill-splitter" type="submit" shape="round" class="register-button ion-margin" expand="block">

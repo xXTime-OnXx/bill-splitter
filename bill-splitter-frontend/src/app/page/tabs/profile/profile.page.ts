@@ -68,4 +68,8 @@ export class ProfilePage implements OnInit {
     }
     return updateUser;
   }
+
+  async changePassword(): Promise<void> {
+    await this.navCtrl.navigateForward(['profile/change-password']);
+  }
 }

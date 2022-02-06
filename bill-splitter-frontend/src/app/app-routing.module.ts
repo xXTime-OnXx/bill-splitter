@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'profile/change-avatar/:avatar',
     loadChildren: () => import('./page/tabs/profile/change-avatar/change-avatar.module').then(m => m.ChangeAvatarPageModule)
+  },
+  {
+    path: 'profile/change-password',
+    loadChildren: () => import('./page/tabs/profile/change-password/change-password.module').then(m => m.ChangePasswordPageModule)
   }
 ];
 @NgModule({

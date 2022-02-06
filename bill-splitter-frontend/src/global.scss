@@ -30,6 +30,10 @@ ion-content {
   max-width: 700px;
 }
 
+ion-card {
+  border-radius: 16px;
+}
+
 ion-item {
   border-radius: 5px;
 }
@@ -41,6 +45,15 @@ ion-item {
   --ion-color-contrast-rgb: var(--ion-color-bill-splitter-contrast-rgb);
   --ion-color-shade: var(--ion-color-bill-splitter-shade);
   --ion-color-tint: var(--ion-color-bill-splitter-tint);
+}
+
+.flex {
+  display: flex;
+}
+
+.fullscreen {
+  width: 100%;
+  height: 100%;
 }
 
 .input-icon {
