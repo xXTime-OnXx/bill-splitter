@@ -11,7 +11,10 @@ A project, useful for splitting the bill in a group of people.
 </p>
 
 ## Feature List
-- [ ] [User Profile](https://github.com/xXTime-OnXx/bill-splitter/issues/6)
+- :white_check_mark: Login & Register
+- :hourglass_flowing_sand: [User Profile](https://github.com/xXTime-OnXx/bill-splitter/issues/6)
+- :large_blue_circle: [Test]()
+
 
 ## Certbot
 Renew certificates
