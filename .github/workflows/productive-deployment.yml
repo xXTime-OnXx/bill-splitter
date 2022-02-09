@@ -1,4 +1,4 @@
-name: Deploy to Frontend & Backend on merge
+name: build
 'on':
   push:
     branches:
