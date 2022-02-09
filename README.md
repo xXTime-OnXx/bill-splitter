@@ -12,11 +12,11 @@ A project, useful for splitting the bill in a group of people.
 
 ## Feature List
 - :white_check_mark: Login & Register
-- :hourglass_flowing_sand: [User Profile](https://github.com/xXTime-OnXx/bill-splitter/issues/6)
-- :large_blue_circle: [Create Bill Manually](https://github.com/xXTime-OnXx/bill-splitter/issues/16)
-- :large_blue_circle: [Group / Trip](https://github.com/xXTime-OnXx/bill-splitter/issues/17)
-- :large_blue_circle: [Friends](https://github.com/xXTime-OnXx/bill-splitter/issues/18)
-- :large_blue_circle: [Create Bill Automatically (AI)](https://github.com/xXTime-OnXx/bill-splitter/issues/19)
+- :hourglass_flowing_sand: [#6](https://github.com/xXTime-OnXx/bill-splitter/issues/6) User Profile 
+- :large_blue_circle: [#16](https://github.com/xXTime-OnXx/bill-splitter/issues/16) Create Bill Manually 
+- :large_blue_circle: [#17](https://github.com/xXTime-OnXx/bill-splitter/issues/17) Group / Trip 
+- :large_blue_circle: [#18](https://github.com/xXTime-OnXx/bill-splitter/issues/18) Friends
+- :large_blue_circle: [#19](https://github.com/xXTime-OnXx/bill-splitter/issues/19) Create Bill Automatically (AI) 
 
 ## Certbot
 Renew certificates
