@@ -5,6 +5,7 @@ import {User} from '../../../service/user/user.type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
+import {AuthService} from '../../../service/auth/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +20,8 @@ export class ProfilePage implements OnInit {
   private user: User;
 
   constructor(private navCtrl: NavController,
-              private userService: UserService) {
+              private userService: UserService,
+              private authService: AuthService) {
   }
 
   ngOnInit(): void {
@@ -39,22 +41,12 @@ export class ProfilePage implements OnInit {
     await this.userService.updateUserInformation(updateUser);
   }
 
-  public subscribeUserDetails(): void {
-    this.userService.getUserInformation().subscribe((user: User) => {
-      this.user = user;
-      this.avatarUrl = AvatarService.imageUrl(user.avatar);
-      this.userForm.get('username').patchValue(user.username);
-      this.userForm.get('email').patchValue(user.email);
-      this.userForm.get('phone').patchValue(user.phone);
-    });
+  async changePassword(): Promise<void> {
+    await this.navCtrl.navigateForward(['profile/change-password']);
   }
 
-  private createForm(): void {
-    this.userForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
-      phone: new FormControl(''),
-    });
+  async logout() {
+    await this.authService.logout();
   }
 
   private createUpdateUser(): UpdateUser {
@@ -69,7 +61,21 @@ export class ProfilePage implements OnInit {
     return updateUser;
   }
 
-  async changePassword(): Promise<void> {
-    await this.navCtrl.navigateForward(['profile/change-password']);
+  private createForm(): void {
+    this.userForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      phone: new FormControl(''),
+    });
+  }
+
+  private subscribeUserDetails(): void {
+    this.userService.getUserInformation().subscribe((user: User) => {
+      this.user = user;
+      this.avatarUrl = AvatarService.imageUrl(user.avatar);
+      this.userForm.get('username').patchValue(user.username);
+      this.userForm.get('email').patchValue(user.email);
+      this.userForm.get('phone').patchValue(user.phone);
+    });
   }
 }

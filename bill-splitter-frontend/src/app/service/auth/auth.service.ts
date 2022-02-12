@@ -4,6 +4,7 @@ import {environment} from '../../../environments/environment';
 import {StorageService} from '../storage/storage.service';
 import {RegisterDto} from './register.dto';
 import {firstValueFrom} from 'rxjs';
+import {NavigationHandler} from '../navigation/navigation.handler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private storage: StorageService,
-  ) {
+    private navHandler: NavigationHandler) {
   }
 
   public async login(username: string, password: string): Promise<boolean> {
@@ -46,6 +47,11 @@ export class AuthService {
       console.error(e);
       return false;
     }
+  }
+
+  public async logout(): Promise<void> {
+    await this.storage.remove(environment.bearerToken);
+    await this.navHandler.navigate('login');
   }
 
 }
