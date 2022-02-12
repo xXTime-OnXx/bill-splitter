@@ -24,7 +24,6 @@ export class UserService {
   public async updateUserInformation(updateUser: UpdateUser): Promise<void> {
     await firstValueFrom(this.http.post<void>(environment.host + 'user/update', updateUser))
     this.loadUserInformation();
-
   }
 
   public async updateAvatar(avatar: Avatar): Promise<void> {
@@ -38,4 +37,7 @@ export class UserService {
     return userInformation;
   }
 
+  public async updatePassword(password: string): Promise<void> {
+    await firstValueFrom(this.http.post<void>(environment.host + 'user/update/password', {password}))
+  }
 }

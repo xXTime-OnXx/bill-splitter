@@ -9,6 +9,7 @@ import {UiUser} from '../../../domain/usecase/user/dto/ui-user';
 import {UpdateUserDto} from './dto/update-user.dto';
 import {UserManager} from '../../../domain/usecase/user/user.manager';
 import {UpdateAvatarDto} from './dto/update-avatar.dto';
+import {UpdatePasswordDto} from './dto/update-password.dto';
 
 @ApiTags('user')
 @Controller('user')
@@ -34,5 +35,11 @@ export class UserController {
   @Post('update/avatar')
   async updateAvatar(@Request() req, @Body() updateAvatarDto: UpdateAvatarDto): Promise<void> {
     await this.userManager.updateAvatar(req.user.sub, updateAvatarDto.avatar);
+  }
+
+  @Roles(Role.USER)
+  @Post('update/password')
+  async updatePassword(@Request() req, @Body() updatePasswordDto: UpdatePasswordDto): Promise<void> {
+    await this.userManager.updatePassword(req.user.sub, updatePasswordDto.password);
   }
 }

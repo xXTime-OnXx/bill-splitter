@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth/auth.service';
-import {Router} from '@angular/router';
+import {NavigationHandler} from '../../service/navigation/navigation.handler';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,9 @@ export class LoginPage implements OnInit {
   isSubmitted = false;
   isLoginSuccessful = true;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private navHandler: NavigationHandler) {
   }
 
   get errorControl() {
@@ -31,9 +33,11 @@ export class LoginPage implements OnInit {
     if (!this.loginForm.valid) {
       return false;
     }
-    this.isLoginSuccessful = await this.authService.login(this.loginForm.get('username').value, this.loginForm.get('password').value);
+    const username = this.loginForm.get('username').value;
+    const password = this.loginForm.get('password').value;
+    this.isLoginSuccessful = await this.authService.login(username, password);
     if (this.isLoginSuccessful) {
-      await this.router.navigate(['tabs']);
+      await this.navHandler.navigate('tabs');
     }
   }
 

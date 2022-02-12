@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth/auth.service';
-import {Router} from '@angular/router';
 import {FieldsEqualValueValidator} from '../../common/validator/fields-equal-value.validator';
+import {NavigationHandler} from '../../service/navigation/navigation.handler';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterPage implements OnInit {
   constructor(
     private authService: AuthService,
     private fieldsEqualValueValidator: FieldsEqualValueValidator,
-    private router: Router) {
+    private navHandler: NavigationHandler) {
   }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class RegisterPage implements OnInit {
       this.registerForm.get('password').value
     );
     if (this.isRegisterSuccessful) {
-      await this.router.navigate(['login']);
+      await this.navHandler.navigate('login');
     }
   }
 

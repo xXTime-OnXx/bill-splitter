@@ -8,6 +8,7 @@ import {Avatar} from 'src/domain/aggregate/user/avatar.enum';
 
 @Injectable()
 export class UserRepositoryImpl extends UserRepository {
+
     public async read(userId: string): Promise<User> {
         return await UserEntity.findOne(userId);
     }
@@ -41,6 +42,12 @@ export class UserRepositoryImpl extends UserRepository {
     public async updateAvatar(userId: string, avatar: Avatar): Promise<void> {
         await UserEntity.update(userId, {
             avatar: avatar
+        });
+    }
+
+    public async updatePassword(userId: string, password: string): Promise<void> {
+        await UserEntity.update(userId, {
+            password: password
         });
     }
 }

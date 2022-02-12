@@ -38,4 +38,9 @@ export class UserManager {
   public async updateAvatar(userId: string, avatar: Avatar): Promise<void> {
     await this.userRepository.updateAvatar(userId, avatar);
   }
+
+  public async updatePassword(userId: string, password: string): Promise<void> {
+    const hashedPassword = await this.hashingService.hashPassword(password);
+    await this.userRepository.updatePassword(userId, hashedPassword);
+  }
 }
