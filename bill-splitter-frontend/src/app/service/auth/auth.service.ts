@@ -54,4 +54,8 @@ export class AuthService {
     await this.navHandler.navigate('login');
   }
 
+  public async isLoggedIn(): Promise<boolean> {
+    const bearerToken = await this.storage.get(environment.bearerToken);
+    return !!bearerToken;
+  }
 }
