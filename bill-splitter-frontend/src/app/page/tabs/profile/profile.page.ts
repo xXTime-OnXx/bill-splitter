@@ -77,5 +77,6 @@ export class ProfilePage implements OnInit {
       this.userForm.get('email').patchValue(user.email);
       this.userForm.get('phone').patchValue(user.phone);
     });
+    this.userService.loadUserInformation();
   }
 }

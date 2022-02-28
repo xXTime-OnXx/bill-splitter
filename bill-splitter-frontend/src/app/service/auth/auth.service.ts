@@ -49,6 +49,10 @@ export class AuthService {
     }
   }
 
+  public async usernameExists(username: string): Promise<boolean> {
+    return await firstValueFrom(this.http.get<boolean>(environment.host + 'auth/exists/' + username));
+  }
+
   public async logout(): Promise<void> {
     await this.storage.remove(environment.bearerToken);
     await this.navHandler.navigate('login');

@@ -4,6 +4,7 @@ import {UserRepository} from '../../aggregate/user/user.repository';
 import {CreateUser} from './dto/create-user';
 import {Avatar} from '../../aggregate/user/avatar.enum';
 import {UpdateUser} from './dto/update-user';
+import {Role} from '../../aggregate/user/role.enum';
 
 @Injectable()
 export class UserManager {
@@ -17,6 +18,7 @@ export class UserManager {
     createUser.password = await this.hashingService.hashPassword(
       createUser.password,
     );
+    createUser.roles.push(Role.USER);
     await this.userRepository.create(createUser);
   }
 

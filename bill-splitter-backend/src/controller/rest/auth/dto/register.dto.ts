@@ -18,12 +18,12 @@ export class RegisterDto {
   @IsString()
   email: string;
 
-  public toCreateUser(): CreateUser {
+  public static toCreateUser(dto: RegisterDto): CreateUser {
     return {
-      username: this.username,
+      username: dto.username,
       avatar: null,
-      password: this.password,
-      email: this.email,
+      password: dto.password,
+      email: dto.email,
       roles: [],
     };
   }
