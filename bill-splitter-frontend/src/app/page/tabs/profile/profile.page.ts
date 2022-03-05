@@ -56,7 +56,7 @@ export class ProfilePage implements OnInit {
       username: this.userForm.get('username').value,
       email: this.userForm.get('email').value,
       phone: this.userForm.get('phone').value,
-    }
+    };
     if (!updateUser.phone) {
       updateUser.phone = '';
     }

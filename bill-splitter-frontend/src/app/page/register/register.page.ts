@@ -4,7 +4,6 @@ import {AuthService} from '../../service/auth/auth.service';
 import {FieldsEqualValueValidator} from '../../common/validator/fields-equal-value.validator';
 import {NavigationHandler} from '../../service/navigation/navigation.handler';
 import {UsernameAvailableValidator} from '../../common/validator/username-available.validator';
-import {PopoverController} from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -21,17 +20,12 @@ export class RegisterPage implements OnInit {
   constructor(
     private authService: AuthService,
     private navHandler: NavigationHandler,
-    private popoverController: PopoverController,
     private usernameAvailableValidator: UsernameAvailableValidator,
     private fieldsEqualValueValidator: FieldsEqualValueValidator) {
   }
 
   ngOnInit() {
     this.buildForm();
-  }
-
-  get errorControl() {
-    return this.registerForm.controls;
   }
 
   async register() {
@@ -65,7 +59,7 @@ export class RegisterPage implements OnInit {
     });
   }
 
-  usernamePopup(event: any) {
-    this.usernamePopoverEvent.emit(event);
+  get errorControl() {
+    return this.registerForm.controls;
   }
 }

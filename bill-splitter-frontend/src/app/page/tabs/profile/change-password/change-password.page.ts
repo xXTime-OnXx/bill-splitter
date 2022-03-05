@@ -11,7 +11,7 @@ import {NavigationHandler} from '../../../../service/navigation/navigation.handl
 })
 export class ChangePasswordPage implements OnInit {
 
-  public defaultBackHref: string = "/tabs/profile";
+  public defaultBackHref = '/tabs/profile';
   public changePasswordForm: FormGroup;
 
   constructor(private userService: UserService,

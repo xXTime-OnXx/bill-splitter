@@ -1,7 +1,7 @@
-import {MigrationInterface, QueryRunner} from 'typeorm';
-import {UserEntity} from '../../user/user.entity';
-import {Role} from '../../../domain/aggregate/user/role.enum';
-import {Avatar} from '../../../domain/aggregate/user/avatar.enum';
+import { MigrationInterface, QueryRunner } from 'typeorm';
+import { UserEntity } from '../../user/user.entity';
+import { Role } from '../../../domain/aggregate/user/role.enum';
+import { Avatar } from '../../../domain/aggregate/user/avatar.enum';
 
 export class Init1637921952277 implements MigrationInterface {
   name = 'Init1637921952277';

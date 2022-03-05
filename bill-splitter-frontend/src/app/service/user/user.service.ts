@@ -22,12 +22,12 @@ export class UserService {
   }
 
   public async updateUserInformation(updateUser: UpdateUser): Promise<void> {
-    await firstValueFrom(this.http.post<void>(environment.host + 'user/update', updateUser))
+    await firstValueFrom(this.http.post<void>(environment.host + 'user/update', updateUser));
     this.loadUserInformation();
   }
 
   public async updateAvatar(avatar: Avatar): Promise<void> {
-    await firstValueFrom(this.http.post<void>(environment.host + 'user/update/avatar', {avatar}))
+    await firstValueFrom(this.http.post<void>(environment.host + 'user/update/avatar', {avatar}));
     this.loadUserInformation();
   }
 
@@ -38,6 +38,6 @@ export class UserService {
   }
 
   public async updatePassword(password: string): Promise<void> {
-    await firstValueFrom(this.http.post<void>(environment.host + 'user/update/password', {password}))
+    await firstValueFrom(this.http.post<void>(environment.host + 'user/update/password', {password}));
   }
 }

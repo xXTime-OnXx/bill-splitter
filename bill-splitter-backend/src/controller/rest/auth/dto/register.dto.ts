@@ -1,6 +1,6 @@
-import {IsNotEmpty, IsString} from 'class-validator';
-import {ApiProperty} from '@nestjs/swagger';
-import {CreateUser} from '../../../../domain/usecase/user/dto/create-user';
+import { IsNotEmpty, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { CreateUser } from '../../../../domain/usecase/user/dto/create-user';
 
 export class RegisterDto {
   @ApiProperty()

@@ -1,10 +1,10 @@
-import {Injectable} from '@nestjs/common';
-import {HashingService} from '../utils/hashing.service';
-import {UserRepository} from '../../aggregate/user/user.repository';
-import {CreateUser} from './dto/create-user';
-import {Avatar} from '../../aggregate/user/avatar.enum';
-import {UpdateUser} from './dto/update-user';
-import {Role} from '../../aggregate/user/role.enum';
+import { Injectable } from '@nestjs/common';
+import { HashingService } from '../utils/hashing.service';
+import { UserRepository } from '../../aggregate/user/user.repository';
+import { CreateUser } from './dto/create-user';
+import { Avatar } from '../../aggregate/user/avatar.enum';
+import { UpdateUser } from './dto/update-user';
+import { Role } from '../../aggregate/user/role.enum';
 
 @Injectable()
 export class UserManager {

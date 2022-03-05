@@ -30,7 +30,7 @@ export class NavigationHandler {
   }
 
   public async navigateBack(fallbackUrl?: string) {
-    const changePasswordUrl = this.router.routerState.snapshot.url
+    const changePasswordUrl = this.router.routerState.snapshot.url;
     await this.navCtrl.pop();
     if (this.router.routerState.snapshot.url === changePasswordUrl) {
       if (!fallbackUrl) {

@@ -13,7 +13,7 @@ import {NavigationHandler} from '../../../../service/navigation/navigation.handl
 })
 export class ChangeAvatarPage implements OnInit {
 
-  public defaultBackHref: string = "/tabs/profile";
+  public defaultBackHref = '/tabs/profile';
   public selectedAvatar: SelectableAvatar;
   public availableAvatars: SelectableAvatar[];
 
@@ -27,6 +27,15 @@ export class ChangeAvatarPage implements OnInit {
     this.loadSelectableAvatars();
   }
 
+  public async changeAvatar(avatar: SelectableAvatar): Promise<void> {
+    this.selectedAvatar = avatar;
+  }
+
+  public async saveSelectedAvatar(): Promise<void> {
+    await this.userService.updateAvatar(this.selectedAvatar.avatar);
+    await this.navHandler.navigateBack(this.defaultBackHref);
+  }
+
   private loadSelectableAvatars(): void {
     this.availableAvatars = Object.values(Avatar).map(ChangeAvatarPage.createSelectableAvatar);
   }
@@ -34,15 +43,6 @@ export class ChangeAvatarPage implements OnInit {
   private loadUserAvatar(): void {
     const userAvatar: Avatar = this.route.snapshot.paramMap.get('avatar') as Avatar;
     this.selectedAvatar = ChangeAvatarPage.createSelectableAvatar(userAvatar);
-  }
-
-  public async changeAvatar(avatar: SelectableAvatar): Promise<void> {
-    this.selectedAvatar = avatar;
-  }
-
-  public async saveSelectedAvatar(): Promise<void> {
-    await this.userService.updateAvatar(this.selectedAvatar.avatar);
-    await this.navHandler.navigateBack(this.defaultBackHref)
   }
 
   private static createSelectableAvatar(userAvatar: Avatar) {

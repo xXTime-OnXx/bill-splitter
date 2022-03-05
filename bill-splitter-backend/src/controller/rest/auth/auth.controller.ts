@@ -1,11 +1,19 @@
-import {Body, Controller, Get, Param, Post, Request, UseGuards} from '@nestjs/common';
-import {LocalAuthGuard} from '../../security/auth/guard/local-auth.guard';
-import {AuthService} from '../../security/auth/auth.service';
-import {ApiBasicAuth, ApiTags} from '@nestjs/swagger';
-import {UserManager} from '../../../domain/usecase/user/user.manager';
-import {RegisterDto} from './dto/register.dto';
-import {LoginDto} from './dto/login.dto';
-import {UserQuery} from '../../../domain/usecase/user/user.query';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Request,
+  UseGuards,
+} from '@nestjs/common';
+import { LocalAuthGuard } from '../../security/auth/guard/local-auth.guard';
+import { AuthService } from '../../security/auth/auth.service';
+import { ApiBasicAuth, ApiTags } from '@nestjs/swagger';
+import { UserManager } from '../../../domain/usecase/user/user.manager';
+import { RegisterDto } from './dto/register.dto';
+import { LoginDto } from './dto/login.dto';
+import { UserQuery } from '../../../domain/usecase/user/user.query';
 
 @ApiTags('auth')
 @Controller('auth')
@@ -13,7 +21,7 @@ export class AuthController {
   constructor(
     private authService: AuthService,
     private userQuery: UserQuery,
-    private userManager: UserManager
+    private userManager: UserManager,
   ) {}
 
   @Get('exists/:username')
