@@ -34,8 +34,8 @@ export class ChangePasswordPage implements OnInit {
 
   private buildForm(): void {
     this.changePasswordForm = new FormGroup({
-      password: new FormControl('', [Validators.required]),
-      confirmPassword: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
     }, {
       validators: [this.fieldsEqualValueValidator.validate('password', 'confirmPassword')]
     });

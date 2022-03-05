@@ -29,6 +29,33 @@
         <ion-input formControlName="confirmPassword" type="password"
                    placeholder="Repeat Password"></ion-input>
       </ion-item>
+
+      <ion-text color="danger" class="ion-padding ion-text-wrap"
+                *ngIf="isSubmitted && !isRegisterSuccessful && errorControl.username.errors?.required">
+        Username is required.
+        <br>
+      </ion-text>
+      <ion-text color="danger" class="ion-padding ion-text-wrap"
+                *ngIf="isSubmitted && !isRegisterSuccessful && registerForm.errors?.usernameTaken">
+        Username is already taken
+        <br>
+      </ion-text>
+      <ion-text color="danger" class="ion-padding ion-text-wrap"
+                *ngIf="isSubmitted && !isRegisterSuccessful && errorControl.email.errors?.required">
+        Email is required.
+        <br>
+      </ion-text>
+      <ion-text color="danger" class="ion-padding ion-text-wrap"
+                *ngIf="isSubmitted && !isRegisterSuccessful && errorControl.password.errors?.required">
+        Password is required.
+        <br>
+      </ion-text>
+      <ion-text color="danger" class="ion-padding ion-text-wrap"
+                *ngIf="isSubmitted && !isRegisterSuccessful && registerForm.errors?.fieldsNotEqualValue">
+        Password and repeated password are not the same.
+        <br>
+      </ion-text>
+
       <ion-button color="bill-splitter" type="submit" shape="round" class="register-button ion-margin" expand="block">
         Register
       </ion-button>

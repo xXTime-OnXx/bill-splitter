@@ -6,6 +6,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
 import {AuthService} from '../../../service/auth/auth.service';
+import {UsernameAvailableValidator} from '../../../common/validator/username-available.validator';
 
 @Component({
   selector: 'app-profile',
@@ -21,7 +22,8 @@ export class ProfilePage implements OnInit {
 
   constructor(private navCtrl: NavController,
               private userService: UserService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private usernameAvailableValidator: UsernameAvailableValidator) {
   }
 
   ngOnInit(): void {
@@ -63,9 +65,13 @@ export class ProfilePage implements OnInit {
 
   private createForm(): void {
     this.userForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
+      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl(''),
+    }, {
+      asyncValidators: [
+        this.usernameAvailableValidator.validate(),
+      ]
     });
   }
 

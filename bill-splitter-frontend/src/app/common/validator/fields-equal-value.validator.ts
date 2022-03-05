@@ -8,7 +8,7 @@ export class FieldsEqualValueValidator {
       const allEqual = fields
         .map<string>(field => formGroup.get(field).value)
         .every((value: string, index: number, array: string[]) => value === array[0]);
-      return allEqual ? null : {fieldsEqualValue: false};
+      return allEqual ? null : {fieldsNotEqualValue: true};
     };
   }
 }

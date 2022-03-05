@@ -11,7 +11,7 @@ export class UsernameAvailableValidator {
     return async (formGroup: FormGroup): Promise<ValidationErrors | null> => {
       const username = formGroup.get('username').value;
       const usernameExists = await this.authService.usernameExists(username);
-      return !usernameExists ? null : {usernameAvailable: false};
+      return !usernameExists ? null : {usernameTaken: true};
     };
   }
 }

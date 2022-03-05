@@ -30,6 +30,10 @@ export class RegisterPage implements OnInit {
     this.buildForm();
   }
 
+  get errorControl() {
+    return this.registerForm.controls;
+  }
+
   async register() {
     this.isSubmitted = true;
     if (!this.registerForm.valid) {
