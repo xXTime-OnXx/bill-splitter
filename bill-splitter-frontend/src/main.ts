@@ -9,7 +9,7 @@ if (environment.production) {
   enableProdMode();
 }
 
-window.screen.orientation.lock('portrait');
+// window.screen.orientation.lock('portrait');xc
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
