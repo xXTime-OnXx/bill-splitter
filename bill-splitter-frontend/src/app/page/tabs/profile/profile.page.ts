@@ -3,10 +3,10 @@ import {AvatarService} from '../../../common/avatar/avatar.service';
 import {UserService} from '../../../service/user/user.service';
 import {User} from '../../../service/user/user.type';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {NavController} from '@ionic/angular';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
 import {AuthService} from '../../../service/auth/auth.service';
 import {UsernameAvailableValidator} from '../../../common/validator/username-available.validator';
+import {NavigationHandler} from '../../../service/navigation/navigation.handler';
 
 @Component({
   selector: 'app-profile',
@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
 
   private user: User;
 
-  constructor(private navCtrl: NavController,
+  constructor(private navHandler: NavigationHandler,
               private userService: UserService,
               private authService: AuthService,
               private usernameAvailableValidator: UsernameAvailableValidator) {
@@ -32,7 +32,7 @@ export class ProfilePage implements OnInit {
   }
 
   public async changeAvatar(): Promise<void> {
-    await this.navCtrl.navigateForward(['profile/change-avatar', this.user.avatar]);
+    await this.navHandler.navigateForward('profile/change-avatar', this.user.avatar);
   }
 
   public async saveChanges(): Promise<void> {
@@ -44,7 +44,7 @@ export class ProfilePage implements OnInit {
   }
 
   async changePassword(): Promise<void> {
-    await this.navCtrl.navigateForward(['profile/change-password']);
+    await this.navHandler.navigateForward('profile/change-password');
   }
 
   async logout() {

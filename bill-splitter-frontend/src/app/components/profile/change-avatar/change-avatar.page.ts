@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {AvatarService} from '../../../../common/avatar/avatar.service';
-import {Avatar} from '../../../../common/avatar/avatar.enum';
+import {AvatarService} from '../../../common/avatar/avatar.service';
+import {Avatar} from '../../../common/avatar/avatar.enum';
 import {ActivatedRoute} from '@angular/router';
-import {SelectableAvatar} from '../../../../common/avatar/selectable-avatar';
-import {UserService} from '../../../../service/user/user.service';
-import {NavigationHandler} from '../../../../service/navigation/navigation.handler';
+import {SelectableAvatar} from '../../../common/avatar/selectable-avatar';
+import {UserService} from '../../../service/user/user.service';
+import {NavigationHandler} from '../../../service/navigation/navigation.handler';
 
 @Component({
   selector: 'app-avatar-picker',

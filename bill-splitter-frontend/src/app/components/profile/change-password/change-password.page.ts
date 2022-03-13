@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {FieldsEqualValueValidator} from '../../../../common/validator/fields-equal-value.validator';
-import {UserService} from '../../../../service/user/user.service';
-import {NavigationHandler} from '../../../../service/navigation/navigation.handler';
+import {FieldsEqualValueValidator} from '../../../common/validator/fields-equal-value.validator';
+import {UserService} from '../../../service/user/user.service';
+import {NavigationHandler} from '../../../service/navigation/navigation.handler';
 
 @Component({
   selector: 'app-change-password',
