@@ -22,7 +22,7 @@ A project, useful for splitting the bill in a group of people.
 Renew certificates
 
 ```shell
-$ docker compose run --rm certbot renew
+$ docker-compose run --rm certbot renew
 ```
 
 ## Credits
