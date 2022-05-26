@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CreateGroup} from '../../../service/group/dto/create-group.type';
+import {GroupService} from '../../../service/group/group.service';
 
 @Component({
   selector: 'app-create-group',
@@ -9,20 +11,28 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class CreateGroupPage implements OnInit {
 
   public defaultBackHref = '/tabs/groups';
-  public changePasswordForm: FormGroup;
+  public createGroupForm: FormGroup;
 
-  constructor() { }
+  constructor(private groupService: GroupService) { }
 
   ngOnInit() {
     this.buildForm();
   }
 
-  createGroup(): void {
-
+  async createGroup(): Promise<void> {
+    if (!this.createGroupForm.valid) {
+      // TODO: Error handling
+      return;
+    }
+    const createGroup: CreateGroup = {
+      name: this.createGroupForm.get('name').value,
+      description: this.createGroupForm.get('description').value
+    };
+    await this.groupService.createGroup(createGroup);
   }
 
   private buildForm(): void {
-    this.changePasswordForm = new FormGroup({
+    this.createGroupForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(6)]),
       description: new FormControl('', [Validators.maxLength(100)]),
     });
