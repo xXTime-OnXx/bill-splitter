@@ -1,13 +1,14 @@
-import { Module } from '@nestjs/common';
-import { UserManager } from './usecase/user/user.manager';
-import { HashingService } from './usecase/utils/hashing.service';
-import { PersistenceModule } from '../persistence/persistence.module';
-import { UserQuery } from './usecase/user/user.query';
-import { GroupManager } from './usecase/group/group.manager';
+import {Module} from '@nestjs/common';
+import {UserManager} from './usecase/user/user.manager';
+import {HashingService} from './usecase/utils/hashing.service';
+import {PersistenceModule} from '../persistence/persistence.module';
+import {UserQuery} from './usecase/user/user.query';
+import {GroupManager} from './usecase/group/group.manager';
+import {GroupQuery} from './usecase/group/group.query';
 
 const managers = [UserManager, GroupManager];
 
-const queries = [UserQuery, UserManager];
+const queries = [UserQuery, GroupQuery];
 
 const services = [HashingService];
 

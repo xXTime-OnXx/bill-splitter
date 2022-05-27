@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {BaseEntity, Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn} from 'typeorm';
+import {UserEntity} from '../user/user.entity';
 
 @Entity('group')
 export class GroupEntity extends BaseEntity {
@@ -12,4 +13,8 @@ export class GroupEntity extends BaseEntity {
 
   @Column()
   description: string;
+
+  @ManyToMany(() => UserEntity)
+  @JoinTable()
+  users: UserEntity[];
 }
