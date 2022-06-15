@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CreateGroup} from '../../../service/group/dto/create-group.type';
 import {GroupService} from '../../../service/group/group.service';
+import {NavigationHandler} from "../../../service/navigation/navigation.handler";
 
 @Component({
   selector: 'app-create-group',
@@ -13,7 +14,8 @@ export class CreateGroupPage implements OnInit {
   public defaultBackHref = '/tabs/groups';
   public createGroupForm: FormGroup;
 
-  constructor(private groupService: GroupService) { }
+  constructor(private groupService: GroupService,
+              private navHandler: NavigationHandler) { }
 
   ngOnInit() {
     this.buildForm();
@@ -29,6 +31,7 @@ export class CreateGroupPage implements OnInit {
       description: this.createGroupForm.get('description').value
     };
     await this.groupService.createGroup(createGroup);
+    await this.navHandler.navigateBack(this.defaultBackHref);
   }
 
   private buildForm(): void {
