@@ -26,9 +26,11 @@ export class GroupService {
   }
 
   public async loadGroups(): Promise<Group[]> {
-    const groups = await firstValueFrom(this.http.get<Group[]>(environment.host + 'groups'));
-    this.groups.next(groups);
-    return groups;
+    // TODO: revert later, temporary data for ui
+    const gps = [{name: 'Summer Trip', description: 'Hawaii & Mexico'}]
+    const groups = await firstValueFrom(this.http.get<Group[]>(environment.host + 'group'));
+    this.groups.next(gps);
+    return gps;
   }
 
 }
