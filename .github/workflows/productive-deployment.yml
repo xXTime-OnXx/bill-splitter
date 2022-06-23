@@ -21,7 +21,7 @@ jobs:
       run:
         working-directory: bill-splitter-frontend
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npm ci && npm run build:prod
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
