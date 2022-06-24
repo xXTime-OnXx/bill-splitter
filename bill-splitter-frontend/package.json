@@ -8,6 +8,7 @@
     "frontend:dev": "ionic serve",
     "build": "ionic build",
     "build:prod": "ionic build --prod",
+    "build:dev": "ionic build -c=development",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

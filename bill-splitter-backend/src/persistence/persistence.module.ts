@@ -12,7 +12,7 @@ import { ConfigService } from '@nestjs/config';
         ({
           type: 'postgres',
           host: configService.get('DATABASE_HOST'),
-          port: 5432,
+          port: configService.get('DATABASE_PORT'),
           username: 'bill-splitter',
           password: 'bill-splitter',
           database: 'bill-splitter',

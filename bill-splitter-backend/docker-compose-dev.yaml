@@ -1,0 +1,30 @@
+# Bill Splitter
+version: '3.1'
+services:
+  backend-dev:
+    container_name: bill-splitter-dev
+    image: bill-splitter/bill-splitter-backend-dev:latest
+    ports:
+      - "3001:3000"
+    expose:
+      - 3000
+    depends_on:
+      - database-dev
+  database-dev:
+    container_name: bill-splitter-database-dev
+    image: postgres:14-alpine
+    ports:
+      - "5433:5432"
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_PASSWORD=bill-splitter
+      - POSTGRES_USER=bill-splitter
+    volumes:
+      - bill-splitter-database-dev:/var/lib/postgresql/data
+volumes:
+  bill-splitter-database-dev:
+networks:
+  default:
+    external:
+      name: webproxy
