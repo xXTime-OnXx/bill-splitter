@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultBackHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Group</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="fullscreen new-group-container ion-justify-content-center ion-align-items-center">
+    <div>
+      <div class="ion-padding">
+        <div class="ion-text-center">
+          <img
+            class="group-icon"
+            alt="group icon"
+            src="../../../../assets/common/group.png">
+        </div>
+      </div>
+      <form [formGroup]="createGroupForm" (ngSubmit)="createGroup()">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center ion-margin-vertical">Create a new group</ion-card-title>
+            <ion-card-subtitle class="ion-text-center">Enter the group name and a short description.</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="">
+            <ion-item>
+              <ion-icon class="input-icon" slot="start" name="people-outline"></ion-icon>
+              <ion-input formControlName="name" type="text"
+                         placeholder="Group name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-icon class="input-icon" slot="start" name="document-text-outline"></ion-icon>
+              <ion-textarea rows="4" maxlength="100" formControlName="description"
+                         placeholder="Description"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <ion-button color="bill-splitter" type="submit" shape="round" class="save-button" expand="block" fill="outline">
+          Create Group
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>
