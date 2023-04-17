@@ -68,6 +68,29 @@
                 }
               ]
             },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
             "ci": {
               "progress": false
             }
@@ -81,6 +104,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "development": {
+              "browserTarget": "app:build:development"
             },
             "ci": {
             }
@@ -141,6 +167,9 @@
             "production": {
               "devServerTarget": "app:serve:production"
             },
+            "development": {
+              "devServerTarget": "app:serve:development"
+            },
             "ci": {
               "devServerTarget": "app:serve:ci"
             }
@@ -154,6 +183,9 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "development": {
+              "browserTarget": "app:build:development"
             }
           }
         },
@@ -167,6 +199,10 @@
             "production": {
               "cordovaBuildTarget": "app:ionic-cordova-build:production",
               "devServerTarget": "app:serve:production"
+            },
+            "development": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:development",
+              "devServerTarget": "app:serve:development"
             }
           }
         }

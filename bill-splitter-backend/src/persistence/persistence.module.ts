@@ -14,7 +14,7 @@ import {GroupRepository} from '../domain/aggregate/group/group.repository';
         ({
           type: 'postgres',
           host: configService.get('DATABASE_HOST'),
-          port: 5432,
+          port: configService.get('DATABASE_PORT'),
           username: 'bill-splitter',
           password: 'bill-splitter',
           database: 'bill-splitter',

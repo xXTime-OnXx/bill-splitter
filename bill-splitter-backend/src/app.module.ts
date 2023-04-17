@@ -6,7 +6,11 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     RestModule,
     ConfigModule.forRoot({
-      envFilePath: ['./environment/dev.env', './environment/prod.env'],
+      envFilePath: [
+        './environment/.env',
+        './environment/prod.env',
+        './environment/dev.env',
+      ],
       isGlobal: true,
     }),
   ],
