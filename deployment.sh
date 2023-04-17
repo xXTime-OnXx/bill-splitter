@@ -1,11 +1,10 @@
 #!/bin/bash
 
 if [ "$1" = "dev" ]; then
-  cd ../temp/bill-splitter/bill-splitter-backend
-
+  cd bill-splitter-backend
   rm environment/prod.env
   docker build -t bill-splitter/bill-splitter-backend-dev .
-  docker-compose up -f docker-compose-dev.yaml -d
+  docker-compose -f docker-compose-dev.yaml up -d
   exit 1
 fi
 
