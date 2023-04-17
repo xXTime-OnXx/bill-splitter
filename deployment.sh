@@ -5,7 +5,7 @@ if [ "$1" = "dev" ]; then
   rm environment/prod.env
   docker build -t bill-splitter/bill-splitter-backend-dev .
   docker-compose -f docker-compose-dev.yaml up -d
-  exit 1
+  exit
 fi
 
 docker-compose up -d
