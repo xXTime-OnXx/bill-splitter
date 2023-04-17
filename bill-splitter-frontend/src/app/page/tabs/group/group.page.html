@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Groups
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!groups || !groups.length" class="ion-margin">
+    You have currently no ongoing groups or trips
+  </div>
+  <ion-card *ngFor="let group of groups">
+    <ion-item class="ion-margin ion-no-padding">
+      <ion-img class="group-image ion-margin-end"
+               alt="group image"
+               [src]="imageUrl"></ion-img>
+      <ion-label>
+        <h3>{{ group.name }}</h3>
+        <p>{{ group.description }}</p>
+      </ion-label>
+      <div slot="end">
+        <ion-icon name="ellipsis-horizontal"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="light" (click)="createGroup()">
+      <ion-icon size="large" name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

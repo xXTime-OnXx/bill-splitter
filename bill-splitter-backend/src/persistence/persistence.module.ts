@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConnectionOptions } from 'typeorm';
-import { UserRepository } from '../domain/aggregate/user/user.repository';
-import { UserRepositoryImpl } from './user/user.repository-impl';
-import { ConfigService } from '@nestjs/config';
+import {Module} from '@nestjs/common';
+import {TypeOrmModule} from '@nestjs/typeorm';
+import {ConnectionOptions} from 'typeorm';
+import {UserRepository} from '../domain/aggregate/user/user.repository';
+import {UserRepositoryImpl} from './user/user.repository-impl';
+import {ConfigService} from '@nestjs/config';
+import {GroupRepositoryImpl} from './group/group.repository.impl';
+import {GroupRepository} from '../domain/aggregate/group/group.repository';
 
 @Module({
   imports: [
@@ -32,7 +34,11 @@ import { ConfigService } from '@nestjs/config';
       useClass: UserRepositoryImpl,
       provide: UserRepository,
     },
+    {
+      useClass: GroupRepositoryImpl,
+      provide: GroupRepository,
+    },
   ],
-  exports: [UserRepository],
+  exports: [UserRepository, GroupRepository],
 })
 export class PersistenceModule {}

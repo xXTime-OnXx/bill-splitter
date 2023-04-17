@@ -23,13 +23,17 @@ const routes: Routes = [
   },
   {
     path: 'profile/change-avatar/:avatar',
-    loadChildren: () => import('./page/tabs/profile/change-avatar/change-avatar.module').then(m => m.ChangeAvatarPageModule),
+    loadChildren: () => import('./components/profile/change-avatar/change-avatar.module').then(m => m.ChangeAvatarPageModule),
     canActivate: [RouteGuard]
   },
   {
     path: 'profile/change-password',
-    loadChildren: () => import('./page/tabs/profile/change-password/change-password.module').then(m => m.ChangePasswordPageModule),
+    loadChildren: () => import('./components/profile/change-password/change-password.module').then(m => m.ChangePasswordPageModule),
     canActivate: [RouteGuard]
+  },
+  {
+    path: 'group/create',
+    loadChildren: () => import('./components/group/create-group/create-group.module').then(m => m.CreateGroupPageModule)
   }
 ];
 @NgModule({
