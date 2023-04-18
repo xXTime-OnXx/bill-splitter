@@ -10,7 +10,7 @@ jobs:
       run:
         working-directory: bill-splitter-backend
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npm ci && npm run build:dev
   build-frontend:
     runs-on: ubuntu-latest
@@ -18,5 +18,5 @@ jobs:
       run:
         working-directory: bill-splitter-frontend
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - run: npm ci && npm run build
