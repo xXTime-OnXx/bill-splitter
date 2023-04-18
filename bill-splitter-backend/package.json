@@ -51,7 +51,7 @@
     "@types/jest": "27.5.2",
     "@types/node": "16.11.41",
     "@types/passport-jwt": "3.0.6",
-    "@types/passport-local": "1.0.34",
+    "@types/passport-local": "1.0.35",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
