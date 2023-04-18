@@ -2,6 +2,10 @@
   "extends": [
     "config:base"
   ],
+  "ignorePaths": [
+      "bill-splitter-frontend/",
+      "bill_splitter_flutter/"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "pin", "digest"],
