@@ -12,7 +12,7 @@ services:
       - database
   database:
     container_name: bill-splitter-database
-    image: postgres:14-alpine
+    image: postgres:15-alpine
     ports:
       - "5432:5432"
     expose:
