@@ -3,7 +3,8 @@
     "config:base"
   ],
   "ignorePaths": [
-      "bill-splitter-frontend/"
+      "bill-splitter-frontend/",
+      "bill_splitter_flutter/"
   ],
   "packageRules": [
     {
