@@ -24,7 +24,7 @@ A project, useful for splitting the bill in a group of people.
 
 ## Technical Debts
 
-- :large_blue_circle: [Migrate NestJs to v9](https://docs.nestjs.com/migration-guide)
+- :white_check_mark: [Migrate NestJs to v9](https://docs.nestjs.com/migration-guide)
 - :large_blue_circle: Create a kubernetes cluster with [Minikube](https://minikube.sigs.k8s.io/docs/) for DEV & PRD
   deployment
 - :large_blue_circle: Implement current Ionic/Angular Frontend with [Flutter](https://flutter.dev/)
