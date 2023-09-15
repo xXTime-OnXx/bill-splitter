@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {FieldsEqualValueValidator} from '../../../common/validator/fields-equal-value.validator';
 import {UserService} from '../../../service/user/user.service';
 import {NavigationHandler} from '../../../service/navigation/navigation.handler';
@@ -12,7 +12,7 @@ import {NavigationHandler} from '../../../service/navigation/navigation.handler'
 export class ChangePasswordPage implements OnInit {
 
   public defaultBackHref = '/tabs/profile';
-  public changePasswordForm: FormGroup;
+  public changePasswordForm: UntypedFormGroup;
 
   constructor(private userService: UserService,
               private navHandler: NavigationHandler,
@@ -33,9 +33,9 @@ export class ChangePasswordPage implements OnInit {
   }
 
   private buildForm(): void {
-    this.changePasswordForm = new FormGroup({
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    this.changePasswordForm = new UntypedFormGroup({
+      password: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
     }, {
       validators: [this.fieldsEqualValueValidator.validate('password', 'confirmPassword')]
     });

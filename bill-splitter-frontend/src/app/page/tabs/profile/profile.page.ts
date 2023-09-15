@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AvatarService} from '../../../common/avatar/avatar.service';
 import {UserService} from '../../../service/user/user.service';
 import {User} from '../../../service/user/user.type';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {UpdateUser} from '../../../service/user/dto/update-user.dto';
 import {AuthService} from '../../../service/auth/auth.service';
 import {UsernameAvailableValidator} from '../../../common/validator/username-available.validator';
@@ -16,7 +16,7 @@ import {NavigationHandler} from '../../../service/navigation/navigation.handler'
 export class ProfilePage implements OnInit {
 
   public avatarUrl: string;
-  public userForm: FormGroup;
+  public userForm: UntypedFormGroup;
 
   private user: User;
 
@@ -64,10 +64,10 @@ export class ProfilePage implements OnInit {
   }
 
   private createForm(): void {
-    this.userForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      phone: new FormControl(''),
+    this.userForm = new UntypedFormGroup({
+      username: new UntypedFormControl('', [Validators.required, Validators.minLength(4)]),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      phone: new UntypedFormControl(''),
     }, {
       asyncValidators: [
         this.usernameAvailableValidator.validate(),

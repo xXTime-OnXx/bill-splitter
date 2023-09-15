@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth/auth.service';
 import {NavigationHandler} from '../../service/navigation/navigation.handler';
 
@@ -10,11 +10,11 @@ import {NavigationHandler} from '../../service/navigation/navigation.handler';
 })
 export class LoginPage implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   isSubmitted = false;
   isLoginSuccessful = true;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
               private authService: AuthService,
               private navHandler: NavigationHandler) {
   }
@@ -43,9 +43,9 @@ export class LoginPage implements OnInit {
 
 
   private buildForm(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
+    this.loginForm = new UntypedFormGroup({
+      username: new UntypedFormControl('', [Validators.required]),
+      password: new UntypedFormControl('', [Validators.required]),
     });
   }
 }

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../service/auth/auth.service';
 import {FieldsEqualValueValidator} from '../../common/validator/fields-equal-value.validator';
 import {NavigationHandler} from '../../service/navigation/navigation.handler';
@@ -12,7 +12,7 @@ import {UsernameAvailableValidator} from '../../common/validator/username-availa
 })
 export class RegisterPage implements OnInit {
 
-  registerForm: FormGroup;
+  registerForm: UntypedFormGroup;
   isSubmitted: boolean;
   isRegisterSuccessful: boolean;
   usernamePopoverEvent = new EventEmitter();
@@ -44,11 +44,11 @@ export class RegisterPage implements OnInit {
   }
 
   private buildForm(): void {
-    this.registerForm = new FormGroup({
-      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    this.registerForm = new UntypedFormGroup({
+      username: new UntypedFormControl('', [Validators.required, Validators.minLength(4)]),
+      email: new UntypedFormControl('', [Validators.required, Validators.email]),
+      password: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new UntypedFormControl('', [Validators.required, Validators.minLength(6)]),
     }, {
       asyncValidators: [
         this.usernameAvailableValidator.validate(),
