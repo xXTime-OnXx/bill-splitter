@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="bill-splitter">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -5014,6 +5014,8 @@ admin</Labels>
     <sequence id="276" parent="263" name="migrations_id_seq">
       <DasType>integer|0s</DasType>
       <ObjectId>16464</ObjectId>
+      <SequenceIdentity>1</SequenceIdentity>
+      <StartValue>1</StartValue>
       <StateNumber>737</StateNumber>
       <OwnerName>bill-splitter</OwnerName>
     </sequence>
@@ -5167,9 +5169,9 @@ admin</Labels>
       <ObjectId>16454</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
       <StateNumber>736</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefKeyColNames>id</RefKeyColNames>
       <RefTableId>16437</RefTableId>
       <RefTableName>group</RefTableName>
       <RefTableKind>table</RefTableKind>
@@ -5179,9 +5181,9 @@ admin</Labels>
       <ObjectId>16459</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
-      <RefColNames>id</RefColNames>
-      <RefColPositions>1</RefColPositions>
       <StateNumber>736</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefKeyColNames>id</RefKeyColNames>
       <RefTableId>16423</RefTableId>
     </foreign-key>
     <index id="306" parent="278" name="PK_e075467711f75a7f49fb79c79ef">
